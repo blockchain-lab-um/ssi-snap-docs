@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "SSI Snap Docs",
+  title: "SSI Snap",
   tagline: "Self-sovereign identity is cool",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
@@ -36,13 +36,13 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/blockchain-lab-um/ssi-snap",
+          editUrl: "https://github.com/blockchain-lab-um/ssi-snap-docs",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/blockchain-lab-um/ssi-snap",
+          editUrl: "https://github.com/blockchain-lab-um/ssi-snap-docs",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
