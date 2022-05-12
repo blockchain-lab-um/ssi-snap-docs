@@ -8,16 +8,16 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "SSI Snap",
   tagline: "Self-sovereign identity is cool",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://github.com/blockchain-lab-um/ssi-snap-docs",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-
+  trailingSlash: false,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "blockchain-lab-um", // Usually your GitHub org/user name.
-  projectName: "ssi-snap", // Usually your repo name.
+  projectName: "ssi-snap-docs", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
