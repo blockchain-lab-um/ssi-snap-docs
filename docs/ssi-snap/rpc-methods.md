@@ -25,6 +25,5 @@ To use the SSI Snap, dApps must interact with its RPC methods.
 ### How to implement SSI Snap
 
 1. dApp first calls the `getDIDAddress` RPC method to get a DID for the selected MetaMask account.
-2. dApp then checks if the DID exists in the selected MetaMask account DID Document as a delegate, if not it should not proceed.
-3. if dApp wants to issue a VC, it should call the `saveVC` RPC method with the VC provided as parameter.
-4. if dApp wants to request a VP, it should call the `getVCs` RPC method, filter the needed VC and then call the `getVP` RPC method, with id of the selected VC provided, to request user to generate a VP for the selected VC.
+2. if dApp wants to issue a VC, it should call the `saveVC` RPC method with the VC provided as parameter.
+3. if dApp wants to request a VP, it should call the `getVCs` RPC method, filter the needed VC and then call the `getVP` RPC method, with id of the selected VC provided, to request user to generate a VP for the selected VC. When calling `getVP` method snap will check if a valid delegate exists. If it doesnt, user will be requested to confirm a transaction to create one. Valid delegate is required for VPs to work!
