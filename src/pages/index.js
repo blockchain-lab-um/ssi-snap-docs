@@ -16,7 +16,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro"
+            to="https://blockchain-lab-um.github.io/course-dapp/"
           >
             Live Demo
           </Link>

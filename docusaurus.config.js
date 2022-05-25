@@ -63,10 +63,11 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "intro",
+            docId: "get_started",
             position: "left",
-            label: "Docs",
+            label: "Quick Start",
           },
+          { to: "/docs/intro", label: "Docs", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://github.com/blockchain-lab-um/ssi-snap",
@@ -88,37 +89,24 @@ const config = {
             ],
           },
           {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: "Website",
+                href: "https://blockchain-lab.um.si/",
               },
               {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                label: "Github",
+                href: "https://github.com/blockchain-lab-um",
+              },
+              {
+                label: "E-Mail",
+                href: "mailto:blockchain-lab@um.si",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Blockchain Lab:UM`,
       },
       prism: {
         theme: lightCodeTheme,
