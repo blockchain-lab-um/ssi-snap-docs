@@ -12,7 +12,7 @@ For snap to work, users will have to install it and connect to the dApp. Once us
 
 To `install` the SSI Snap:
 
-_NOTE:_ _Snap can also be installed using a 3rd party Platform such as our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or [Snaplist](https://snaplist.org/), or our [Configuration Page](config)._
+_NOTE:_ _Snap can also be installed using a 3rd party Platform such as our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or [Snaplist](https://snaplist.org/), or our [Configuration Page](../config)._
 
 ```
 const response = await window.ethereum.request({
