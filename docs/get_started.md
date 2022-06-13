@@ -14,7 +14,7 @@ The **SSI Snap** is a MetaMask Snap, that can handle **DIDs**, securely store **
 
 In order to install and test the Snap, you will need to install [MetaMask Flask](https://metamask.io/flask/). For full functionality, creating a delegate is required, which costs some gas, hence some ether is required!
 
-You can install the Snap by simply connecting to our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or select it from the [Snaplist](https://snaplist.org/)
+You can install the Snap in [Configuration Page](config) or by simply connecting to our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or select it from the [Snaplist](https://snaplist.org/)
 
 #### Testing on testnet
 
@@ -26,7 +26,7 @@ To test on the testnet get some test ether from a [rinkeby faucet](https://fauce
 
 ### Implementing the Snap in a dApp
 
-For snap to work, users will have to install it and connect to the dApp. Once user connects MetaMask to the dApp, dApp can request a list of installed snaps. If SSI Snap is not installed user can be requested to install it.
+For snap to work, users will have to install it and connect to the dApp. Once user connects MetaMask to the dApp, dApp can request a list of installed snaps. If SSI Snap is not installed user can be requested to install it .
 
 To `install` the SSI Snap:
 

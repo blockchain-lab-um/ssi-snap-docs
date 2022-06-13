@@ -6,20 +6,20 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #8349bb;
+  --ifm-color-primary-dark: #8349bb;
+  --ifm-color-primary-darker: #8349bb;
+  --ifm-color-primary-darkest: #8349bb;
+  --ifm-color-primary-light: #8349bb;
+  --ifm-color-primary-lighter: #8349bb;
+  --ifm-color-primary-lightest: #8349bb;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
+[data-theme="dark"] {
+  --ifm-color-primary: #a495ff;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -27,4 +27,40 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.home_container {
+  padding: 5%;
+  font-size: larger;
+  text-align: center;
+}
+
+.home_container h1 {
+  font-size: 56px;
+}
+
+.home_button {
+  background: rgb(104, 96, 232);
+  background: linear-gradient(
+    0deg,
+    rgba(104, 96, 232, 1) 0%,
+    rgba(104, 96, 232, 1) 0%,
+    rgba(134, 71, 181, 1) 100%
+  );
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  font-size: x-large;
+  border-radius: 20px;
+  color: white;
+}
+.feature-title {
+  color: #f6851b;
+}
+
+.home_slogan {
+  color: #a495ff;
+  font-weight: bold;
+  font-size: larger;
 }

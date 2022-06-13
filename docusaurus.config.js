@@ -36,7 +36,8 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/blockchain-lab-um/ssi-snap-docs/edit/master/",
+          editUrl:
+            "https://github.com/blockchain-lab-um/ssi-snap-docs/edit/master/",
         },
         blog: {
           showReadingTime: true,
@@ -80,33 +81,22 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
-            items: [
-              {
-                label: "Documentation",
-                to: "/docs/intro",
-              },
-            ],
+            label: "Documentation",
+            to: "/docs/intro",
           },
           {
-            title: "More",
-            items: [
-              {
-                label: "Website",
-                href: "https://blockchain-lab.um.si/",
-              },
-              {
-                label: "Github",
-                href: "https://github.com/blockchain-lab-um",
-              },
-              {
-                label: "E-Mail",
-                href: "mailto:blockchain-lab@um.si",
-              },
-            ],
+            label: "Website",
+            href: "https://blockchain-lab.um.si/",
+          },
+          {
+            label: "Github",
+            href: "https://github.com/blockchain-lab-um",
+          },
+          {
+            label: "E-Mail",
+            href: "mailto:blockchain-lab@um.si",
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Blockchain Lab:UM`,
       },
       prism: {
         theme: lightCodeTheme,
