@@ -4,15 +4,33 @@ sidebar_position: 2
 
 # Getting Started
 
-## Testing the Snap
+The **SSI Snap** is a MetaMask Snap, that can handle **DIDs**, securely store **VCs**, create **VPs** and is designed to be blockchain-agnostic.
 
-In order to install and test the Snap, you will need to install [MetaMask Flask](https://metamask.io/flask/) and get some test ether from a [rinkeby faucet](https://faucets.chain.link/rinkeby).
+---
+
+## User
+
+### Using the Snap
+
+In order to install and test the Snap, you will need to install [MetaMask Flask](https://metamask.io/flask/). For full functionality, creating a delegate is required, which costs some gas, hence some ether is required!
 
 You can install the Snap by simply connecting to our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or select it from the [Snaplist](https://snaplist.org/)
 
-## Implementing the Snap in a dApp
+#### Testing on testnet
 
-For snap to work, users will have to install it and connect to the dApp. Once user connects MetaMask to the dApp, dApp can request a list of installed snaps. If SSI Snap is not installed you can request user to install it. This can be done with the following code, or by asking users to install it using a 3rd party Platform such as our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or [Snaplist](https://snaplist.org/).
+To test on the testnet get some test ether from a [rinkeby faucet](https://faucets.chain.link/rinkeby). The snap can be tested on our [Platform](https://blockchain-lab-um.github.io/course-dapp/).
+
+---
+
+## Developer
+
+### Implementing the Snap in a dApp
+
+For snap to work, users will have to install it and connect to the dApp. Once user connects MetaMask to the dApp, dApp can request a list of installed snaps. If SSI Snap is not installed user can be requested to install it.
+
+To `install` the SSI Snap:
+
+_NOTE:_ Snap can also be installed using a 3rd party Platform such as our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or [Snaplist](https://snaplist.org/).
 
 ```
 const response = await window.ethereum.request({
@@ -28,7 +46,11 @@ if (response) {
 }
 ```
 
-Once Snap is installed VCs can be saved in the MetaMask state. VCs must adhere to W3C Verifiable Credentials Recommendation. Invalid format might lead to failure when generating VPs.
+Once Snap is installed, VCs can be saved in the MetaMask state. VCs must adhere to the W3C Verifiable Credentials Recommendation. Invalid format might lead to failure when generating VPs.
+
+`Save a VC` in MetaMask state:
+
+_NOTE:_ a VC will be stored under currently connected account.
 
 ```
 const response = await window.ethereum.request({
@@ -47,7 +69,9 @@ if(response.data){
 else console.log(response.error)
 ```
 
-To get an array of VCs stored in MetaMask (Will only return VCs of the connected account).
+To `get an array of VCs` stored in MetaMask:
+
+_NOTE:_ This will retrieve a list of VCs stored under currently connected account.
 
 ```
 const response = await window.ethereum.request({
@@ -66,7 +90,9 @@ else console.log(response.error)
 
 ```
 
-To generate a VP you need id of a VC (from array). It's highly recommended to use domain and challenge as well. When generating VP for the first time, users will be asked to generate a delegate for their MetaMask account (This will cost a small tx fee). This is needed for Snap to work properly! More in later sections.
+To `generate a VP` you need `id` of a VC (from array). It's highly recommended to use `domain` and `challenge` as well:
+
+_NOTE:_ When generating VP for the first time, users will be asked to generate a delegate for their MetaMask account (This will cost a small tx fee). This is needed for Snap to work properly! More in later sections.
 
 ```
 const response = await window.ethereum.request({
@@ -84,3 +110,7 @@ if(response.data){
 }
 else console.log(response.error)
 ```
+
+### Working with VCs
+
+It is up to the dApp to issue VCs and/or request VPs/VCs and verify their validity (scheme, subject, controller, content, etc.). We recommend using [Veramo Framework](https://veramo.io/).
