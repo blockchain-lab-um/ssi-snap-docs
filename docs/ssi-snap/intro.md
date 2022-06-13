@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# What are MetaMask Snaps?
+# MetaMask Snaps - Basics
 
 The most popular wallet, **[MetaMask](https://metamask.io/)**, introduced **[Snaps](https://docs.metamask.io/guide/snaps.html)**, which makes building plugins for additional functionality possible. MetaMask is a crypto wallet and gateway to blockchain apps, providing a simple interface for users to interact with EVM-based blockchains, sign and send transactions, etc. Snaps make a wide specter of new applications possible. They can enable support for previously unsupported chains like Polkadot, Solana, Bitcoin, etc. They allow dApps to modify MetaMask's state to store and retrieve data, like VCs. They also enable access to the web and the possibility to leverage practically any API and much more. New functionality is only limited by the creativity of developers. Here is a [list](https://github.com/piotr-roslaniec/awesome-metamask-snaps) of already developed Snaps!
 
