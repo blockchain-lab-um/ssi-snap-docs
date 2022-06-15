@@ -1,8 +1,8 @@
 {
   "label": "Plugins",
-  "position": 5,
+  "position": 7,
   "link": {
     "type": "generated-index",
-    "description": "Learn about plugins designed to enhance the SSI Snap"
+    "description": "Learn about the developed plugins that power the SSI Snap."
   }
 }

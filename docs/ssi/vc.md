@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Verifiable Credentials
+# Verifiable Credentials (VC)
 
 **Verifiable Credentials** ([W3C Verifiable Credentials](https://www.w3.org/TR/vc-data-model/)), or **VCs** for short, are an open standard for digital credentials to solve this issue. They are digitally signed and can be verified cryptographically, which makes them tamper-proof. VCs work well with data privacy, which goes well with data regulations pushed by the European Union (GDPR) and some other countries.
 

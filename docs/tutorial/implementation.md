@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# How to use the SSI Snap?
+# How to use it?
 
 The **SSI Snap** is a MetaMask Snap, that can handle **DIDs**, securely store **VCs**, create **VPs** and is designed to be blockchain-agnostic.
 
@@ -14,7 +14,7 @@ To `install` the SSI Snap:
 
 _NOTE:_ _Snap can also be installed using a 3rd party Platform such as our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or [Snaplist](https://snaplist.org/), or our [Configuration Page](../config)._
 
-```
+```js
 const response = await window.ethereum.request({
         method: 'wallet_enable',
         params: [
@@ -44,7 +44,7 @@ To use the SSI Snap, dApps must interact with its RPC methods.
 
 _NOTE:_ _a VC will be stored under currently connected account._
 
-```
+```js
 const response = await window.ethereum.request({
         method: 'wallet_invokeSnap',
         params: [
@@ -71,7 +71,7 @@ _NOTE: Currently, the only way to select a VC, for which you want to generate a 
 
 _NOTE 2:_ _This will retrieve a list of VCs stored under currently connected account._
 
-```
+```js
 const response = await window.ethereum.request({
         method: 'wallet_invokeSnap',
         params: [
@@ -98,7 +98,7 @@ _NOTE:_ _When generating VP for the first time, users will be asked to generate 
 
 _NOTE 2: Currently, VPs can only contain a single VC. This will be changed in upcoming versions._
 
-```
+```js
 const response = await window.ethereum.request({
         method: 'wallet_invokeSnap',
         params: [

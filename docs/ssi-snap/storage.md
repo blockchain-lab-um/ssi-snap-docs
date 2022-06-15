@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# State
+# Storage
 
 SSI Snap utilizes MetaMask's state to store data. SSI Snap is designed in a way that it does not affect state used by other Snaps. It only modifies the **SSISnapState** object.
 
@@ -17,7 +17,7 @@ Data-store plugins, used by Veramo Client and Manager plugins, modify the state.
 
 Structure of the state stored in MetaMask:
 
-```
+```js
 {
   ...
   objectCreatedByOtherSnaps,

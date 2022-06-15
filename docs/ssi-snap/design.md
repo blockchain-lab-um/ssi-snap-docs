@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# SSI Snap Design
+# Design
 
 **The SSI Snap is a MetaMask Snap, that can handle DIDs, securely store VCs, and create the VPs. It is designed to be blockchain-agnostic.
 **
@@ -11,7 +11,7 @@ sidebar_position: 2
 
 When working with DIDs, there are various DID methods to choose from. One of the most popular methods is called **did:ethr**. This method uses Ethereum addresses as fully self-managed DIDs. In other words, every Ethereum account is a DID. An example of Ethereum address as a DID;
 
-```
+```js
 did:ethr:0x9907a0cf64ec9fbf6ed8fd4971090de88222a9ac
 ```
 
@@ -30,7 +30,7 @@ To make DIDs functional a framework is needed. SSI Snap uses **[Veramo framework
 
 ## Data Storage
 
-These DIDs and VCs need to be stored somewhere. By default, SSI Snap stores all data in the MetaMask State. More about this in the [State](/docs/ssi-snap/state) section.
+These DIDs and VCs need to be stored somewhere. By default, SSI Snap stores all data in the MetaMask State. More about this in the [State](/docs/ssi-snap/storage) section.
 
 In the future other ways of storing data will be implemented, starting with storing data in the cloud. Storing data outside MetaMask brings many benefits such as ability to sync multiple applications and ability to make external backups.
 

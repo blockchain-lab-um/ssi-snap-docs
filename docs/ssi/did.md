@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Decentralized Identifier
+# Decentralized Identifier (DID)
 
 **Decentralized Identifiers** ([W3C Decentralized Identifiers](https://www.w3.org/TR/did-core/)), or **DIDs** in short, are the new type of unique and persistent identifiers (URI) that enable verifiable and decentralized identity. They are entirely controlled by the identity owner and are independent of centralized authorities. Each individual can create as many DIDs as they wish and use each in different contexts to prevent data correlation.
 

@@ -4,32 +4,32 @@ import styles from "./styles.module.css";
 
 const FeatureList = [
   {
-    title: "Take control of your identity",
+    title: "Self-Sovereign Identity",
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Take control of your online identity and start managing DIDs and
-        Verifiable Credentials in the worlds most popular crypto wallet!
+        Take your online identity to the next level and start using Decentralized Identifiers (DIDs) and
+        Verifiable Credentials (VCs) in the most popular crypto wallet.
       </>
     ),
   },
   {
-    title: "Easy to Use",
+    title: "Easy-to-Use",
     Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
     description: (
       <>
-        SSI Snap expands MetaMask capabilities and does not require another app
-        to start using Self-Sovereign Identity!
+        SSI Snap expands MetaMask capabilities and does not require additional application or extension
+        for Self-Sovereign Identity.
       </>
     ),
   },
   {
-    title: "Easy to Implement",
+    title: "Fast Integration",
     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
-        dApps that are already using MetaMask only need to call a few additional
-        RPC Methods to start using Verifiable Credentials!
+        Decentralized applications (dApps) only need to call a few additional
+        MetaMask's RPC methods to utilize the power of DIDs and VCs.
       </>
     ),
   },

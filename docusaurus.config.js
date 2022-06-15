@@ -7,8 +7,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "SSI Snap",
-  tagline: "Self-sovereign identity is cool",
-  url: "https://github.com/blockchain-lab-um/ssi-snap-docs",
+  tagline: "Self-Sovereign Identity is cool",
+  url: "https://ssi-snap-docs.vercel.app/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -40,6 +40,8 @@ const config = {
             "https://github.com/blockchain-lab-um/ssi-snap-docs/edit/master/",
         },
         blog: {
+          blogSidebarTitle: "Titles",
+          blogSidebarCount: "ALL",
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -66,10 +68,10 @@ const config = {
             type: "doc",
             docId: "get_started",
             position: "left",
-            label: "Quick Start",
+            label: "Quickstart",
           },
           { to: "/docs/intro", label: "Docs", position: "left" },
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "https://medium.com/@blockchainlabum", label: "Blog", position: "left" },
           {
             href: "https://github.com/blockchain-lab-um/ssi-snap",
             label: "GitHub",
@@ -89,14 +91,23 @@ const config = {
             href: "https://blockchain-lab.um.si/",
           },
           {
-            label: "Github",
+            label: "GitHub",
             href: "https://github.com/blockchain-lab-um",
           },
           {
-            label: "E-Mail",
+            label: "LinkedIn",
+            href: "https://www.linkedin.com/company/blockchain-lab-um",
+          },
+          {
+            label: "Twitter",
+            href: "https://twitter.com/blockchainlabum",
+          },
+          {
+            label: "Email",
             href: "mailto:blockchain-lab@um.si",
           },
         ],
+        copyright: `Copyright © ${new Date().getFullYear()} Blockchain Lab:UM. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

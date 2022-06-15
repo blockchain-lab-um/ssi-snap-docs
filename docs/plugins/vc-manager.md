@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# veramo-vc-manager
+# veramo-vc-manager (Veramo)
 
 ### Introduction
 
@@ -10,7 +10,7 @@ Veramo does not provide similar support for managing VCs like it does for DIDs a
 
 This plugin comes with an abstract class that can be extended in any form needed.
 
-```
+```js
 export abstract class AbstractVCStore {
   abstract import(args: VerifiableCredential): Promise<boolean>
   abstract get(args: { id: number }): Promise<VerifiableCredential | null>
@@ -27,7 +27,7 @@ This abstract class enabled [`SnapVCStore`](../ssi-snap/architecture.md) plugin,
 
 Add the plugin to the Veramo agent setup.
 
-```
+```js
 export const agent = createAgent<
     ...
     IVCManager &

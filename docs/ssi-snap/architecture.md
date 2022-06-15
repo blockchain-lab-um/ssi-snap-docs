@@ -17,7 +17,7 @@ Veramo Client is used to manage DIDs and VCs, using Veramos **DIDManager**, **Ke
 
 SSI Snap uses following Veramo Client configuration:
 
-```
+```js
 export const agent = createAgent<
   IDIDManager & IKeyManager & IDataStore & IResolver & IVCManager
 >({
@@ -53,7 +53,7 @@ export const agent = createAgent<
 
 Here is the code of **SnapVCStore** plugin, that extends one of the previously mentioned abstract classes;
 
-```
+```js
 export class SnapVCStore extends AbstractVCStore {
   async get(args: { id: number }): Promise<VerifiableCredential | null> {
     let ssiAccountState = await getVCAccount();

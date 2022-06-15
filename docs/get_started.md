@@ -32,7 +32,7 @@ To `install` the SSI Snap:
 
 _NOTE:_ _Snap can also be installed using a 3rd party Platform such as our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or [Snaplist](https://snaplist.org/)._
 
-```
+```js
 const response = await window.ethereum.request({
         method: 'wallet_enable',
         params: [
@@ -52,7 +52,7 @@ Once Snap is installed, VCs can be saved in the MetaMask state. VCs must adhere 
 
 _NOTE:_ _a VC will be stored under currently connected account._
 
-```
+```js
 const response = await window.ethereum.request({
         method: 'wallet_invokeSnap',
         params: [
@@ -73,7 +73,7 @@ To `get an array of VCs` stored in MetaMask:
 
 _NOTE:_ _This will retrieve a list of VCs stored under currently connected account._
 
-```
+```js
 const response = await window.ethereum.request({
         method: 'wallet_invokeSnap',
         params: [
@@ -94,7 +94,7 @@ To `generate a VP` you need `id` of a VC (from array). It's highly recommended t
 
 _NOTE:_ _When generating VP for the first time, users will be asked to generate a delegate for their MetaMask account (This will cost a small tx fee). This is needed for Snap to work properly! More in later sections._
 
-```
+```js
 const response = await window.ethereum.request({
         method: 'wallet_invokeSnap',
         params: [
