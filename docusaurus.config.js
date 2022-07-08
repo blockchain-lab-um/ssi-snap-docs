@@ -64,14 +64,14 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          {
-            type: "doc",
-            docId: "get_started",
-            position: "left",
-            label: "Quickstart",
-          },
+          { to: "/docs/get_started", label: "Quickstart", position: "left" },
           { to: "/docs/intro", label: "Docs", position: "left" },
-          { to: "https://medium.com/@blockchainlabum", label: "Blog", position: "left" },
+          { to: "/docs/config", label: "Manage SSI Snap", position: "left" },
+          {
+            to: "https://medium.com/@blockchainlabum",
+            label: "Blog",
+            position: "right",
+          },
           {
             href: "https://github.com/blockchain-lab-um/ssi-snap",
             label: "GitHub",

@@ -3,7 +3,11 @@ import React, { useState } from "react";
 export default function MetaMaskConfig() {
   const [mmAddress, setMmAddress] = useState(null);
   const [snapInstalled, setSnapInstalled] = useState(false);
+  const [infuraToken, setInfuraToken] = useState("");
+  const [success, setSuccess] = useState(false);
 
+  //const snapID = "npm:@blockchain-lab-um/ssi-snap";
+  const snapID = "local:http://localhost:8081/";
   const connectMetamask = async () => {
     if (window.ethereum) {
       window.ethereum
@@ -11,8 +15,12 @@ export default function MetaMaskConfig() {
         .then((result) => {
           console.log("Setting MM address!", result);
           setMmAddress(result[0]);
+
+          console.log("Checking for snap...");
         });
-      console.log("Checking for snap...");
+      const snapInstalled = await isSnapInstalled(snapID);
+      console.log("installed: ", snapInstalled);
+      setSnapInstalled(snapInstalled);
     } else {
       console.log("Install Metamask");
     }
@@ -49,7 +57,7 @@ export default function MetaMaskConfig() {
       params: [
         {
           wallet_snap: {
-            ["npm:@blockchain-lab-um/ssi-snap"]: { version: "latest" },
+            [snapID]: { version: "latest" },
           },
         },
       ],
@@ -57,7 +65,7 @@ export default function MetaMaskConfig() {
     if (res) {
       const snap = res.snaps;
       //// TODO improve this
-      if (snap["npm:@blockchain-lab-um/ssi-snap"]) {
+      if (snap[snapID]) {
         console.log("Sucessfuly installed.");
         setSnapInstalled(true);
         return true;
@@ -66,9 +74,34 @@ export default function MetaMaskConfig() {
     return false;
   };
 
+  const submitToken = async () => {
+    if (infuraToken != "") {
+      console.log(infuraToken);
+      const response = await window.ethereum.request({
+        method: "wallet_invokeSnap",
+        params: [
+          snapID,
+          {
+            method: "changeInfuraToken",
+            params: [infuraToken],
+          },
+        ],
+      });
+      console.log(response.data);
+      if (response.data == true) {
+        setSuccess(true);
+      }
+    }
+  };
+
+  const tokenChange = (e) => {
+    setInfuraToken(e.target.value);
+  };
+
   return (
     <div>
       {mmAddress != null && <p>Connected account: {mmAddress}</p>}
+      {success && <p>Successfully changed configuration!</p>}
       <p>
         {mmAddress == null && (
           <button onClick={connectMetamask}>Connect MetaMask</button>
@@ -77,7 +110,10 @@ export default function MetaMaskConfig() {
           <button onClick={installSnap}>install Snap</button>
         )}
         {mmAddress != null && snapInstalled == true && (
-          <button onClick={console.log("Hello world")}>Test</button>
+          <>
+            <input onChange={tokenChange} type={"text"} />
+            <button onClick={submitToken}>Change Infura Token</button>
+          </>
         )}
       </p>
     </div>
