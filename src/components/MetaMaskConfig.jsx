@@ -6,8 +6,8 @@ export default function MetaMaskConfig() {
   const [infuraToken, setInfuraToken] = useState("");
   const [success, setSuccess] = useState(false);
 
-  //const snapID = "npm:@blockchain-lab-um/ssi-snap";
-  const snapID = "local:http://localhost:8081/";
+  const snapID = "npm:@blockchain-lab-um/ssi-snap";
+  //const snapID = "local:http://localhost:8081/";
   const connectMetamask = async () => {
     if (window.ethereum) {
       window.ethereum
