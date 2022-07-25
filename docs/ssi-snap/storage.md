@@ -41,5 +41,3 @@ Structure of the state stored in MetaMask:
     },
 }
 ```
-
-Currently, data in the MetaMask state is unencrypted. This should change soon, as MetaMask Snaps are implementing encrypted storage ([PR](https://github.com/MetaMask/snaps-skunkworks/pull/369)).

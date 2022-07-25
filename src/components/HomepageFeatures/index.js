@@ -8,8 +8,9 @@ const FeatureList = [
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Take your online identity to the next level and start using Decentralized Identifiers (DIDs) and
-        Verifiable Credentials (VCs) in the most popular crypto wallet.
+        Take your online identity to the next level and start using
+        Decentralized Identifiers (DIDs) and Verifiable Credentials (VCs) in the
+        most popular crypto wallet.
       </>
     ),
   },
@@ -18,8 +19,8 @@ const FeatureList = [
     Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
     description: (
       <>
-        SSI Snap expands MetaMask capabilities and does not require additional application or extension
-        for Self-Sovereign Identity.
+        SSI Snap expands MetaMask capabilities and does not require additional
+        application or extension for Self-Sovereign Identity.
       </>
     ),
   },
@@ -28,8 +29,8 @@ const FeatureList = [
     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
-        Decentralized applications (dApps) only need to call a few additional
-        MetaMask's RPC methods to utilize the power of DIDs and VCs.
+        Easily integrate SSI Snap into any decentralized application (dApp) that
+        currently supports MetaMask.
       </>
     ),
   },

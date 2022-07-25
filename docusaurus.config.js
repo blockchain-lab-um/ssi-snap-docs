@@ -60,8 +60,8 @@ const config = {
       navbar: {
         title: "SSI Snap Docs",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "SSI Snap Logo",
+          src: "img/ssi_snap_logo_2.svg",
         },
         items: [
           { to: "/docs/get_started", label: "Quickstart", position: "left" },
