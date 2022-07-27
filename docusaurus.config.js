@@ -26,7 +26,7 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  scripts: ["https://kit.fontawesome.com/77dffd2c3b.js"],
   presets: [
     [
       "classic",
@@ -73,6 +73,11 @@ const config = {
             position: "right",
           },
           {
+            href: "https://discord.gg/jNzEkAEG",
+            label: "Discord",
+            position: "right",
+          },
+          {
             href: "https://github.com/blockchain-lab-um/ssi-snap",
             label: "GitHub",
             position: "right",
@@ -93,6 +98,10 @@ const config = {
           {
             label: "GitHub",
             href: "https://github.com/blockchain-lab-um",
+          },
+          {
+            label: "Discord",
+            href: "https://discord.gg/jNzEkAEG",
           },
           {
             label: "LinkedIn",
