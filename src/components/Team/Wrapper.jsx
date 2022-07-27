@@ -15,6 +15,7 @@ export default function Wrapper() {
             linkedin={member.linkedin}
             image={member.image}
             twitter={member.twitter}
+            key={i}
           />
         ))}
       </div>

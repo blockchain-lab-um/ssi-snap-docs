@@ -12,10 +12,10 @@ export default function TeamCard(props) {
       </div>
       <div className="card-icons">
         <a href={props.linkedin} target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
+          <i className="fa-brands fa-linkedin"></i>
         </a>
         <a href={props.twitter} target="_blank">
-          <i class="fa-brands fa-square-twitter"></i>
+          <i className="fa-brands fa-square-twitter"></i>
         </a>
       </div>
     </div>
