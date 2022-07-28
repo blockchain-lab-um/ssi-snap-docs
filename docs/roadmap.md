@@ -21,6 +21,6 @@ Planned features:
 - [ ] OIDC flows for VC issuance and VP exchange
 - [ ] CHAPI
 - [ ] UI inside MetaMask Snap for configuration
-...
+- [ ] ...
 
 This page is subject to change in the future.
