@@ -1,13 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable no-console */
 import React, { useState } from "react";
 
 export default function MetaMaskConfig() {
-  const [mmAddress, setMmAddress] = useState(null);
+  const [mmAddress, setMmAddress] = useState<string | null>(null);
   const [snapInstalled, setSnapInstalled] = useState(false);
   const [infuraToken, setInfuraToken] = useState("");
   const [success, setSuccess] = useState(false);
 
   const snapID = "npm:@blockchain-lab-um/ssi-snap";
-  //const snapID = "local:http://localhost:8081/";
+  // const snapID = "local:http://localhost:8081/";
+  // https://gist.github.com/rekmarks/1d249cb9d805f8b8ad89467ae961517b
   const connectMetamask = async () => {
     if (window.ethereum) {
       window.ethereum
@@ -15,20 +19,22 @@ export default function MetaMaskConfig() {
         .then((result) => {
           console.log("Setting MM address!", result);
           setMmAddress(result[0]);
-
           console.log("Checking for snap...");
+        })
+        .catch((err) => {
+          /* TODO: Handle error */
+          console.error(err);
         });
-      const snapInstalled = await isSnapInstalled(snapID);
-      console.log("installed: ", snapInstalled);
-      setSnapInstalled(snapInstalled);
+      const res = await isSnapInstalled(snapID);
+      console.log("installed: ", res);
+      setSnapInstalled(res);
     } else {
       console.log("Install Metamask");
     }
-    return;
   };
 
   async function getWalletSnaps() {
-    return await window.ethereum.request({
+    return window.ethereum.request({
       method: "wallet_getSnaps",
     });
   }
@@ -41,8 +47,8 @@ export default function MetaMaskConfig() {
           permission.id === snapOrigin &&
           (!version || permission.version === version)
       );
-    } catch (e) {
-      console.log("Failed to obtain installed snaps", e);
+    } catch (err) {
+      console.log("Failed to obtain installed snaps", err);
       return false;
     }
   }
@@ -52,30 +58,32 @@ export default function MetaMaskConfig() {
     //   console.log("Snap already installed");
     //   return true;
     // }
-    const res = await window.ethereum.request({
-      method: "wallet_enable",
-      params: [
-        {
-          wallet_snap: {
-            [snapID]: { version: "latest" },
+    try {
+      const res = await window.ethereum.request({
+        method: "wallet_enable",
+        params: [
+          {
+            wallet_snap: {
+              [snapID]: { version: "latest" },
+            },
           },
-        },
-      ],
-    });
-    if (res) {
-      const snap = res.snaps;
-      //// TODO improve this
-      if (snap[snapID]) {
-        console.log("Sucessfuly installed.");
-        setSnapInstalled(true);
-        return true;
+        ],
+      });
+      if (res) {
+        const snap = res.snaps;
+        /// / TODO improve this
+        if (snap[snapID]) {
+          console.log("Sucessfuly installed.");
+          setSnapInstalled(true);
+        }
       }
+    } catch (err) {
+      console.log("Failed to install snap", err);
     }
-    return false;
   };
 
   const submitToken = async () => {
-    if (infuraToken != "") {
+    if (infuraToken !== "") {
       console.log(infuraToken);
       const response = await window.ethereum.request({
         method: "wallet_invokeSnap",
@@ -88,7 +96,7 @@ export default function MetaMaskConfig() {
         ],
       });
       console.log(response.data);
-      if (response.data == true) {
+      if (response.data === true) {
         setSuccess(true);
       }
     }
@@ -100,19 +108,25 @@ export default function MetaMaskConfig() {
 
   return (
     <div>
-      {mmAddress != null && <p>Connected account: {mmAddress}</p>}
+      {mmAddress && <p>Connected account: {mmAddress}</p>}
       {success && <p>Successfully changed configuration!</p>}
       <p>
-        {mmAddress == null && (
-          <button onClick={connectMetamask}>Connect MetaMask</button>
+        {!mmAddress && (
+          <button type="button" onClick={connectMetamask}>
+            Connect MetaMask
+          </button>
         )}
-        {mmAddress != null && snapInstalled == false && (
-          <button onClick={installSnap}>install Snap</button>
+        {mmAddress && !snapInstalled && (
+          <button type="button" onClick={installSnap}>
+            install Snap
+          </button>
         )}
-        {mmAddress != null && snapInstalled == true && (
+        {mmAddress && snapInstalled && (
           <>
-            <input onChange={tokenChange} type={"text"} />
-            <button onClick={submitToken}>Change Infura Token</button>
+            <input onChange={tokenChange} type="text" />
+            <button type="button" onClick={submitToken}>
+              Change Infura Token
+            </button>
           </>
         )}
       </p>
