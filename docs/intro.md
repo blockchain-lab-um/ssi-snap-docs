@@ -14,3 +14,5 @@ What are the use cases for **SSI** in **dApps**?
 - DAO governance based on earned achievements and skills
 - No gas identity data (everything is off-chain)
 - Everything you come up with ... :)
+
+Want to join the discussion or interested in contributing? Join the [Discord](https://discord.gg/cKA24TuMUd).
