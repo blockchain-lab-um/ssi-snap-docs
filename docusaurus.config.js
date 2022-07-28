@@ -62,64 +62,48 @@ const config = {
         alt: "SSI Snap Logo",
         src: "img/ssi_snap_logo_2.svg",
       },
-      items: [
-        { to: "/docs/get_started", label: "Quickstart", position: "left" },
-        { to: "/docs/intro", label: "Docs", position: "left" },
-        { to: "/docs/config", label: "Manage SSI Snap", position: "left" },
-        {
-          to: "https://medium.com/@blockchainlabum",
-          label: "Blog",
-          position: "right",
-        },
-        {
-          href: "https://discord.gg/jNzEkAEG",
-          label: "Discord",
-          position: "right",
-        },
-        {
-          href: "https://github.com/blockchain-lab-um/ssi-snap",
-          label: "GitHub",
-          position: "right",
-        },
-      ],
-    },
-    footer: {
-      style: "dark",
-      links: [
-        {
-          label: "Documentation",
-          to: "/docs/intro",
-        },
-        {
-          label: "Website",
-          href: "https://blockchain-lab.um.si/",
-        },
-        {
-          label: "GitHub",
-          href: "https://github.com/blockchain-lab-um",
-        },
-        {
-          label: "Discord",
-          href: "https://discord.gg/jNzEkAEG",
-        },
-        {
-          label: "LinkedIn",
-          href: "https://www.linkedin.com/company/blockchain-lab-um",
-        },
-        {
-          label: "Twitter",
-          href: "https://twitter.com/blockchainlabum",
-        },
-        {
-          label: "Email",
-          href: "mailto:blockchain-lab@um.si",
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Blockchain Lab:UM. Built with Docusaurus.`,
-    },
-    prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
+      footer: {
+        style: "dark",
+        links: [
+          {
+            label: "Documentation",
+            to: "/docs/intro",
+          },
+          {
+            label: "Website",
+            href: "https://blockchain-lab.um.si/",
+          },
+          {
+            label: "Twitter",
+            href: "https://twitter.com/blockchainlabum",
+          },
+          {
+            label: "GitHub",
+            href: "https://github.com/blockchain-lab-um",
+          },
+          {
+            label: "Discord",
+            href: "https://discord.gg/cKA24TuMUd",
+          },
+          {
+            label: "LinkedIn",
+            href: "https://www.linkedin.com/company/blockchain-lab-um",
+          },
+          {
+            label: "YouTube",
+            href: "https://www.youtube.com/channel/UCvOb83Xduo6YuC05cO7g0ww",
+          },
+          {
+            label: "Email",
+            href: "mailto:blockchain-lab@um.si",
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Blockchain Lab:UM. Built with Docusaurus.`,
+      },
+      prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+      },
     },
   },
 };
