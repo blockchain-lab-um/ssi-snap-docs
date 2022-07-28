@@ -12,7 +12,7 @@ sidebar_position: 2
 When working with DIDs, there are various DID methods to choose from. One of the most popular methods is called **did:ethr**. This method uses Ethereum addresses as fully self-managed DIDs. In other words, every Ethereum account is a DID. An example of Ethereum address as a DID;
 
 ```js
-did: ethr: 0x9907a0cf64ec9fbf6ed8fd4971090de88222a9ac;
+did:ethr:0x9907a0cf64ec9fbf6ed8fd4971090de88222a9ac
 ```
 
 Ethereum accounts in MetaMask, used daily by millions, are essentially DIDs. What is missing is the functionality to use them and leverage their potential correctly.
