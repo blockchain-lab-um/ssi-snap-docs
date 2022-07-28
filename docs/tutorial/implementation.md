@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# How to use it?
+# How To Use It?
 
 The **SSI Snap** is a MetaMask Snap, that can handle **DIDs**, securely store **VCs**, create **VPs** and is designed to be blockchain-agnostic.
 
