@@ -12,6 +12,12 @@
   },
   "rules": {
     "jsx-a11y/label-has-associated-control": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ]
   }
 }

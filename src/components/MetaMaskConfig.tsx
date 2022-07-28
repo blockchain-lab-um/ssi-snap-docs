@@ -9,39 +9,24 @@ export default function MetaMaskConfig() {
   const [infuraToken, setInfuraToken] = useState("");
   const [success, setSuccess] = useState(false);
 
+  // TODO: Move both to .env ?
   const snapID = "npm:@blockchain-lab-um/ssi-snap";
-  // const snapID = "local:http://localhost:8081/";
-  // https://gist.github.com/rekmarks/1d249cb9d805f8b8ad89467ae961517b
-  const connectMetamask = async () => {
-    if (window.ethereum) {
-      window.ethereum
-        .request({ method: "eth_requestAccounts" })
-        .then((result) => {
-          console.log("Setting MM address!", result);
-          setMmAddress(result[0]);
-          console.log("Checking for snap...");
-        })
-        .catch((err) => {
-          /* TODO: Handle error */
-          console.error(err);
-        });
-      const res = await isSnapInstalled(snapID);
-      console.log("installed: ", res);
-      setSnapInstalled(res);
-    } else {
-      console.log("Install Metamask");
-    }
-  };
+  const snapVersion = "1.0.8";
 
-  async function getWalletSnaps() {
-    return window.ethereum.request({
+  // const snapID = "local:http://localhost:8081/";
+  async function getWalletSnaps(): Promise<WalletGetSnapsResult> {
+    return window.ethereum.request<WalletGetSnapsResult>({
       method: "wallet_getSnaps",
     });
   }
 
-  async function isSnapInstalled(snapOrigin, version) {
-    console.log(await getWalletSnaps());
+  async function isSnapInstalled(
+    snapOrigin: string,
+    version: string
+  ): Promise<boolean> {
     try {
+      console.log(await getWalletSnaps());
+
       return !!Object.values(await getWalletSnaps()).find(
         (permission) =>
           permission.id === snapOrigin &&
@@ -53,13 +38,35 @@ export default function MetaMaskConfig() {
     }
   }
 
+  async function connectMetamask() {
+    if (window.ethereum) {
+      window.ethereum
+        .request<string[]>({ method: "eth_requestAccounts" })
+        .then((result) => {
+          console.log("Setting MM address!", result);
+          setMmAddress(result[0]);
+          console.log("Checking for snap...");
+        })
+        .catch((err) => {
+          /* TODO: Handle error */
+          console.error(err);
+        });
+
+      const res = await isSnapInstalled(snapID, snapVersion);
+      console.log("installed: ", res);
+      setSnapInstalled(res);
+    } else {
+      console.log("Install Metamask");
+    }
+  }
+
   const installSnap = async () => {
     // if (isSnapInstalled("npm:@blockchain-lab-um/ssi-snap")) {
     //   console.log("Snap already installed");
     //   return true;
     // }
     try {
-      const res = await window.ethereum.request({
+      const res = await window.ethereum.request<WalletEnableResult>({
         method: "wallet_enable",
         params: [
           {
@@ -70,9 +77,9 @@ export default function MetaMaskConfig() {
         ],
       });
       if (res) {
-        const snap = res.snaps;
-        /// / TODO improve this
-        if (snap[snapID]) {
+        const { snaps } = res;
+        // TODO: improve this
+        if (snaps[snapID]) {
           console.log("Sucessfuly installed.");
           setSnapInstalled(true);
         }
@@ -82,29 +89,37 @@ export default function MetaMaskConfig() {
     }
   };
 
-  const submitToken = async () => {
+  async function submitToken() {
     if (infuraToken !== "") {
-      console.log(infuraToken);
-      const response = await window.ethereum.request({
-        method: "wallet_invokeSnap",
-        params: [
-          snapID,
-          {
-            method: "changeInfuraToken",
-            params: [infuraToken],
-          },
-        ],
-      });
-      console.log(response.data);
-      if (response.data === true) {
-        setSuccess(true);
+      try {
+        console.log(infuraToken);
+        const response = await window.ethereum.request<{
+          data: boolean;
+          error?: string;
+        }>({
+          method: "wallet_invokeSnap",
+          params: [
+            snapID,
+            {
+              method: "changeInfuraToken",
+              params: [infuraToken],
+            },
+          ],
+        });
+
+        console.log(response.data);
+        if (response.data === true) {
+          setSuccess(true);
+        }
+      } catch (err) {
+        console.error("An error occured", err);
       }
     }
-  };
+  }
 
-  const tokenChange = (e) => {
+  function tokenChange(e: React.ChangeEvent<HTMLInputElement>) {
     setInfuraToken(e.target.value);
-  };
+  }
 
   return (
     <div>
