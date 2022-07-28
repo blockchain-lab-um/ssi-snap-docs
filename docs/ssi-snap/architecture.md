@@ -18,35 +18,39 @@ Veramo Client is used to manage DIDs and VCs, using Veramos **DIDManager**, **Ke
 SSI Snap uses following Veramo Client configuration:
 
 ```js
-export const agent = createAgent<
-  IDIDManager & IKeyManager & IDataStore & IResolver & IVCManager
->({
-  plugins: [
-    new KeyManager({
-      store: new SnapKeyStore(),
-      kms: {
-        local: new KeyManagementSystem(new SnapPrivateKeyStore()),
-      },
-    }),
-    new DIDManager({
-      store: new SnapDIDStore(),
-      defaultProvider: "did:ethr:rinkeby",
-      providers: {
-        "did:ethr:rinkeby": new EthrDIDProvider({
-          defaultKms: "local",
-          network: "rinkeby",
-          rpcUrl: "https://rinkeby.infura.io/v3/" + INFURA_PROJECT_ID,
+export const agent =
+  (createAgent < IDIDManager) &
+  IKeyManager &
+  IDataStore &
+  IResolver &
+  (IVCManager >
+    {
+      plugins: [
+        new KeyManager({
+          store: new SnapKeyStore(),
+          kms: {
+            local: new KeyManagementSystem(new SnapPrivateKeyStore()),
+          },
         }),
-      },
-    }),
-    new VCManager({ store: new SnapVCStore() }),
-    new DIDResolverPlugin({
-      resolver: new Resolver({
-        ...ethrDidResolver({ infuraProjectId: INFURA_PROJECT_ID }),
-      }),
-    }),
-  ],
-});
+        new DIDManager({
+          store: new SnapDIDStore(),
+          defaultProvider: "did:ethr:rinkeby",
+          providers: {
+            "did:ethr:rinkeby": new EthrDIDProvider({
+              defaultKms: "local",
+              network: "rinkeby",
+              rpcUrl: "https://rinkeby.infura.io/v3/" + INFURA_PROJECT_ID,
+            }),
+          },
+        }),
+        new VCManager({ store: new SnapVCStore() }),
+        new DIDResolverPlugin({
+          resolver: new Resolver({
+            ...ethrDidResolver({ infuraProjectId: INFURA_PROJECT_ID }),
+          }),
+        }),
+      ],
+    });
 ```
 
 **DIDManager**, **KeyManager**, **PrivateKeyManager** and **[VCManager](../plugins/vc-manager)** plugins take care of managing and storing data. They all come with an [abstract data-store class](https://github.com/blockchain-lab-um/veramo-vc-manager/blob/main/src/vc-store/abstract-vc-store.ts). Using said class, we implemented custom data-store plugins, that save data inside the MetaMask state.
