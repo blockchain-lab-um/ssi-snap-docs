@@ -101,7 +101,7 @@ const config = {
           },
           {
             label: "Discord",
-            href: "https://discord.gg/jNzEkAEG",
+            href: "https://discord.gg/cKA24TuMUd",
           },
           {
             label: "LinkedIn",
