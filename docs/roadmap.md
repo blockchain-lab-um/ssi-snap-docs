@@ -7,12 +7,14 @@ sidebar_position: 8
 Are you interested in how SSI Snap will evolve in the future?
 
 Finished:
+
 - [x] support for DID method did:ethr
 - [x] signing VCs with MetaMask
 - [x] local off-chain storage (inside MetaMask Snap)
 - [x] alpha release
 
 Planned features:
+
 - [ ] support other DID methods (did:ebsi ...)
 - [ ] support storage on Ceramic Network
 - [ ] support storage on cloud platforms

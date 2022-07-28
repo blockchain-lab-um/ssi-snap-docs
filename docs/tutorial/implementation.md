@@ -16,15 +16,17 @@ _NOTE:_ _Snap can also be installed using a 3rd party Platform such as our [Plat
 
 ```js
 const response = await window.ethereum.request({
-        method: 'wallet_enable',
-        params: [
-          {
-            wallet_snap: { ['npm:@blockchain-lab-um/ssi-snap']: { version: 'latest' } },
-          },
-        ],
-    });
+  method: "wallet_enable",
+  params: [
+    {
+      wallet_snap: {
+        ["npm:@blockchain-lab-um/ssi-snap"]: { version: "latest" },
+      },
+    },
+  ],
+});
 if (response) {
-    //Snap installed successfully
+  //Snap installed successfully
 }
 ```
 
@@ -46,19 +48,18 @@ _NOTE:_ _a VC will be stored under currently connected account._
 
 ```js
 const response = await window.ethereum.request({
-        method: 'wallet_invokeSnap',
-        params: [
-          snapId,
-          {
-            method: 'saveVC',
-            params: [VC],
-          },
-        ],
-    });
-if(response.data){
-    //VC saved successfully
-}
-else console.log(response.error)
+  method: "wallet_invokeSnap",
+  params: [
+    snapId,
+    {
+      method: "saveVC",
+      params: [VC],
+    },
+  ],
+});
+if (response.data) {
+  //VC saved successfully
+} else console.log(response.error);
 ```
 
 #### getVCs
@@ -73,19 +74,17 @@ _NOTE 2:_ _This will retrieve a list of VCs stored under currently connected acc
 
 ```js
 const response = await window.ethereum.request({
-        method: 'wallet_invokeSnap',
-        params: [
-          snapId,
-          {
-            method: 'getVCs',
-          },
-        ],
-    })
-if(response.data){
-    //response.data.map((vc) => console.log(vc))
-}
-else console.log(response.error)
-
+  method: "wallet_invokeSnap",
+  params: [
+    snapId,
+    {
+      method: "getVCs",
+    },
+  ],
+});
+if (response.data) {
+  //response.data.map((vc) => console.log(vc))
+} else console.log(response.error);
 ```
 
 #### getVP
@@ -100,19 +99,18 @@ _NOTE 2: Currently, VPs can only contain a single VC. This will be changed in up
 
 ```js
 const response = await window.ethereum.request({
-        method: 'wallet_invokeSnap',
-        params: [
-          snapId,
-          {
-            method: 'getVP',
-            params: [vp_id, domain, challenge],
-          },
-        ],
-    });
-if(response.data){
-    //console.log(response.data))
-}
-else console.log(response.error)
+  method: "wallet_invokeSnap",
+  params: [
+    snapId,
+    {
+      method: "getVP",
+      params: [vp_id, domain, challenge],
+    },
+  ],
+});
+if (response.data) {
+  //console.log(response.data))
+} else console.log(response.error);
 ```
 
 ### Working with VCs

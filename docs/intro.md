@@ -9,6 +9,7 @@ Welcome blockchain explorers! If you ever wanted to integrate the powerful world
 The SSI Snap is a **MetaMask Snap** (plugin) that can handle **DIDs**, securely store **VCs**, and create the **VPs**. These docs offer all the necessary information to start using it right away!
 
 What are the use cases for **SSI** in **dApps**?
+
 - Enriched identity profiles
 - Credentials to access hidden resources
 - DAO governance based on earned achievements and skills
