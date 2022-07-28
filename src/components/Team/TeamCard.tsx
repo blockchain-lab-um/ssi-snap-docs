@@ -10,7 +10,9 @@ export default function TeamCard({ member }: TeamCardProps) {
   return (
     <div className={styles.teamCard}>
       <div className={styles.cardBody}>
-        <img className={styles.cardImage} src={member.image} alt="team" />
+        <div className={styles.cardImageHolder}>
+          <img className={styles.cardImage} src={member.image} alt="team" />
+        </div>
         <h2 className={styles.cardTitle}>{member.name}</h2>
         <h2 className={styles.cardSubtitle}>{member.title}</h2>
         <hr className={styles.cardHr} />
