@@ -62,6 +62,26 @@ const config = {
         alt: "SSI Snap Logo",
         src: "img/ssi_snap_logo_2.svg",
       },
+      items: [
+        { to: "/docs/get_started", label: "Quickstart", position: "left" },
+        { to: "/docs/intro", label: "Docs", position: "left" },
+        { to: "/docs/config", label: "Manage SSI Snap", position: "left" },
+        {
+          to: "https://medium.com/@blockchainlabum",
+          label: "Blog",
+          position: "right",
+        },
+        {
+          href: "https://discord.gg/jNzEkAEG",
+          label: "Discord",
+          position: "right",
+        },
+        {
+          href: "https://github.com/blockchain-lab-um/ssi-snap",
+          label: "GitHub",
+          position: "right",
+        },
+      ],
     },
     footer: {
       style: "dark",
