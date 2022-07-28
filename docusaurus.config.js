@@ -96,6 +96,10 @@ const config = {
             href: "https://blockchain-lab.um.si/",
           },
           {
+            label: "Twitter",
+            href: "https://twitter.com/blockchainlabum",
+          },
+          {
             label: "GitHub",
             href: "https://github.com/blockchain-lab-um",
           },
@@ -108,8 +112,8 @@ const config = {
             href: "https://www.linkedin.com/company/blockchain-lab-um",
           },
           {
-            label: "Twitter",
-            href: "https://twitter.com/blockchainlabum",
+            label: "YouTube",
+            href: "https://www.youtube.com/channel/UCvOb83Xduo6YuC05cO7g0ww",
           },
           {
             label: "Email",
