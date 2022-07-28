@@ -8,8 +8,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "SSI Snap",
   tagline: "Self-Sovereign Identity is cool",
-  url: "https://ssi-snap-docs.vercel.app/",
-  baseUrl: "/",
+  url: "https://blockchain-lab-um.github.io/",
+  baseUrl: "/ssi-snap-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -18,7 +18,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "blockchain-lab-um", // Usually your GitHub org/user name.
   projectName: "ssi-snap-docs", // Usually your repo name.
-
+  customFields: {},
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -29,9 +29,8 @@ const config = {
   scripts: ["https://kit.fontawesome.com/77dffd2c3b.js"],
   presets: [
     [
-      "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      "@docusaurus/preset-classic",
+      {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
@@ -45,84 +44,83 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/blockchain-lab-um/ssi-snap-docs",
+          editUrl:
+            "https://github.com/blockchain-lab-um/ssi-snap-docs/edit/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-      }),
+      },
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: "SSI Snap Docs",
-        logo: {
-          alt: "SSI Snap Logo",
-          src: "img/ssi_snap_logo_2.svg",
+  themeConfig: {
+    navbar: {
+      title: "SSI Snap Docs",
+      logo: {
+        alt: "SSI Snap Logo",
+        src: "img/ssi_snap_logo_2.svg",
+      },
+      items: [
+        { to: "/docs/get_started", label: "Quickstart", position: "left" },
+        { to: "/docs/intro", label: "Docs", position: "left" },
+        { to: "/docs/config", label: "Manage SSI Snap", position: "left" },
+        {
+          to: "https://medium.com/@blockchainlabum",
+          label: "Blog",
+          position: "right",
         },
-        items: [
-          { to: "/docs/get_started", label: "Quickstart", position: "left" },
-          { to: "/docs/intro", label: "Docs", position: "left" },
-          { to: "/docs/config", label: "Manage SSI Snap", position: "left" },
-          {
-            to: "https://medium.com/@blockchainlabum",
-            label: "Blog",
-            position: "right",
-          },
-          {
-            href: "https://discord.gg/jNzEkAEG",
-            label: "Discord",
-            position: "right",
-          },
-          {
-            href: "https://github.com/blockchain-lab-um/ssi-snap",
-            label: "GitHub",
-            position: "right",
-          },
-        ],
-      },
-      footer: {
-        style: "dark",
-        links: [
-          {
-            label: "Documentation",
-            to: "/docs/intro",
-          },
-          {
-            label: "Website",
-            href: "https://blockchain-lab.um.si/",
-          },
-          {
-            label: "GitHub",
-            href: "https://github.com/blockchain-lab-um",
-          },
-          {
-            label: "Discord",
-            href: "https://discord.gg/jNzEkAEG",
-          },
-          {
-            label: "LinkedIn",
-            href: "https://www.linkedin.com/company/blockchain-lab-um",
-          },
-          {
-            label: "Twitter",
-            href: "https://twitter.com/blockchainlabum",
-          },
-          {
-            label: "Email",
-            href: "mailto:blockchain-lab@um.si",
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Blockchain Lab:UM. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
+        {
+          href: "https://discord.gg/jNzEkAEG",
+          label: "Discord",
+          position: "right",
+        },
+        {
+          href: "https://github.com/blockchain-lab-um/ssi-snap",
+          label: "GitHub",
+          position: "right",
+        },
+      ],
+    },
+    footer: {
+      style: "dark",
+      links: [
+        {
+          label: "Documentation",
+          to: "/docs/intro",
+        },
+        {
+          label: "Website",
+          href: "https://blockchain-lab.um.si/",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/blockchain-lab-um",
+        },
+        {
+          label: "Discord",
+          href: "https://discord.gg/jNzEkAEG",
+        },
+        {
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/company/blockchain-lab-um",
+        },
+        {
+          label: "Twitter",
+          href: "https://twitter.com/blockchainlabum",
+        },
+        {
+          label: "Email",
+          href: "mailto:blockchain-lab@um.si",
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Blockchain Lab:UM. Built with Docusaurus.`,
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+    },
+  },
 };
 
 module.exports = config;
