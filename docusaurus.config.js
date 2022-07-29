@@ -13,7 +13,7 @@ const config = {
   baseUrl: "/ssi-snap-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/ssi_snap_logo_2.svg",
   trailingSlash: false,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

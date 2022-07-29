@@ -15,14 +15,22 @@ Data-store plugins, used by Veramo Client and Manager plugins, modify the state.
 - DIDManager manages data in **identifiers**.
 - VCManager manages data in **vcs**.
 
+There is also an object that stores configuration, called **SSISnapConfig**. Inside this object user-set settings are stored, such as Infura token, where VCs are stored (currently only Snap is supported), etc.
+
 Structure of the state stored in MetaMask:
 
 ```js
 {
   ...
-  objectCreatedByOtherSnaps,
+  objectCreatedByOtherSnaps...,
   SSISnapState:
     {
+      config:
+      {
+        store: "SNAP",
+        infuraToken: ...,
+        ...,
+      }
       0xBea807A8...e59D:
         {
           snapKeyStore: Record<string, IKey>,
