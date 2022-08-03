@@ -13,9 +13,9 @@ This plugin comes with an abstract class that can be extended in any form needed
 ```js
 export abstract class AbstractVCStore {
   abstract import(args: VerifiableCredential): Promise<boolean>
-  abstract get(args: { id: number }): Promise<VerifiableCredential | null>
-  abstract delete(args: { id: number }): Promise<boolean>
-  abstract list(): Promise<VerifiableCredential[]>
+  abstract get(args: { id: string }): Promise<VerifiableCredential | null>
+  abstract delete(args: { id: string }): Promise<boolean>
+  abstract list(args: {querry?: any}): Promise<VerifiableCredential[]>
 }
 ```
 
@@ -57,7 +57,9 @@ Delete a VC
 
 Get an array of all VCs
 
-`agent.listVCS()`
+`agent.listVCS({querry: querry})`
+
+querry is an object where additional requirements are provided, for example issuer: did:..., if you only want to list DIDs with said issuer.
 
 **[GitHub](https://github.com/blockchain-lab-um/veramo-vc-manager) |
 [npm](https://www.npmjs.com/package/@blockchain-lab-um/veramo-vc-manager)**

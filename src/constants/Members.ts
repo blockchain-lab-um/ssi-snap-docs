@@ -9,17 +9,26 @@ export type Member = {
 
 const members: Member[] = [
   {
-    name: "Vid Kersic",
-    title: "CTO",
-    description: "Runs the place",
+    name: "doc. dr. Muhamed Turkanović",
+    title: "Head of BlockchainLab:UM",
+    description: "",
+    linkedin: "https://www.linkedin.com/in/muhamedturkanovic/",
+    image:
+      "https://blockchain-lab.um.si/wp-content/uploads/2019/12/Turkanovic_Muhamed.png",
+    twitter: "",
+  },
+  {
+    name: "Vid Keršič",
+    title: "researcher & developer",
+    description: "",
     linkedin: "https://www.linkedin.com/in/vid-kersic/",
     image: "https://blockchain-lab.um.si/wp-content/uploads/2019/12/vid.png",
     twitter: "",
   },
   {
     name: "Patrik Rek",
-    title: "researcher",
-    description: "Does the research",
+    title: "researcher & developer",
+    description: "",
     linkedin: "https://www.linkedin.com/in/patrik-rek-78649a129/",
     image:
       "https://blockchain-lab.um.si/wp-content/uploads/2019/12/RekPatrik-4-1.png",
@@ -27,27 +36,27 @@ const members: Member[] = [
   },
   {
     name: "Martin Domajnko",
-    title: "researcher",
-    description: "Does the research",
+    title: "developer",
+    description: "",
     linkedin: "https://www.linkedin.com/in/martin-domajnko-94b23617a/",
     image:
       "https://blockchain-lab.um.si/wp-content/uploads/2019/12/martin-1.png",
     twitter: "",
   },
   {
-    name: "Urban Vidovic",
-    title: "researcher",
-    description: "Does the research",
+    name: "Urban Vidovič",
+    title: "developer",
+    description: "",
     linkedin: "https://www.linkedin.com/in/urbanvidovic",
     image:
       "https://blockchain-lab.um.si/wp-content/uploads/2021/10/vidovic_urban.png",
     twitter: "",
   },
   {
-    name: "Andraz Vrecko",
-    title: "researcher",
-    description: "Does the research",
-    linkedin: "https://www.linkedin.com/in/vid-kersic/",
+    name: "Andraž Vrečko",
+    title: "developer",
+    description: "",
+    linkedin: "https://www.linkedin.com/in/andrazvrecko/",
     image: "https://via.placeholder.com/150",
     twitter: "",
   },

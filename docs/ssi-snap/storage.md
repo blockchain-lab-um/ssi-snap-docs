@@ -36,14 +36,14 @@ Structure of the state stored in MetaMask:
           snapKeyStore: Record<string, IKey>,
           snapPrivateKeyStore: Record<string, IKey>,
           identifiers: Record<string, IIdentifier>,
-          vcs: VerifiableCredential[]
+          vcs: Record<string, VerifiableCredential>
         },
       0x8Db2a08D...caD7:
         {
           snapKeyStore: Record<string, IKey>,
           snapPrivateKeyStore: Record<string, IKey>,
           identifiers: Record<string, IIdentifier>,
-          vcs: VerifiableCredential[]
+          vcs: Record<string, VerifiableCredential>
         },
       ...,
     },

@@ -59,26 +59,34 @@ Here is the code of **SnapVCStore** plugin, that extends one of the previously m
 
 ```js
 export class SnapVCStore extends AbstractVCStore {
-  async get(args: { id: number }): Promise<VerifiableCredential | null> {
+  async get(args: { id: string }): Promise<VerifiableCredential | null> {
     let ssiAccountState = await getVCAccount();
-    if (args.id > ssiAccountState.vcs.length) return null;
-    return ssiAccountState.vcs[args.id];
-  }
-
-  async delete({ id }: { id: number }) {
-    return true;
+    const vc = ssiAccountState.vcs[args.id];
+    if (!vc) throw Error(`not_found: VC not found for alias=${args.id}`);
+    return vc;
   }
 
   async import(args: VerifiableCredential) {
     let ssiAccountState = await getVCAccount();
-    ssiAccountState.vcs.push(args);
+    const alias = uuidv4();
+    ssiAccountState.vcs[alias] = { ...args };
     await updateVCAccount(ssiAccountState);
     return true;
   }
 
-  async list(): Promise<VerifiableCredential[]> {
+  async list(args: { querry?: any }): Promise<VerifiableCredential[]> {
     let ssiAccountState = await getVCAccount();
-    return ssiAccountState.vcs;
+
+    let result: VerifiableCredential[] = [];
+
+    Object.keys(ssiAccountState.vcs).forEach((key) => {
+      result.push({ ...ssiAccountState.vcs[key], key: key });
+    });
+    if (args.querry && args.querry.issuer) {
+      result = result.filter((i) => i.issuer === args.querry.issuer);
+    }
+
+    return result;
   }
 }
 ```

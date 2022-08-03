@@ -48,7 +48,7 @@ if (response) {
 }
 ```
 
-Once Snap is installed, VCs can be saved in the MetaMask state. VCs must adhere to the W3C Verifiable Credentials Recommendation. Invalid format might lead to failure when generating VPs.
+Once Snap is installed, VCs can be saved in the MetaMask state. VCs must adhere to the [W3C Verifiable Credentials Recommendation](https://www.w3.org/TR/vc-data-model/). Invalid format might lead to failure when generating VPs.
 
 `Save a VC` in MetaMask state:
 
@@ -72,7 +72,7 @@ if (response.data) {
 
 To `get an array of VCs` stored in MetaMask:
 
-_NOTE:_ _This will retrieve a list of VCs stored under currently connected account._
+_NOTE:_ _This will retrieve a list of VCs stored under currently connected account. It is possible to provide a querry object with property "issuer", that will filter and only return VCs issued by said issuer. More filter options will be supported in the future._
 
 ```js
 const response = await window.ethereum.request({
@@ -81,17 +81,16 @@ const response = await window.ethereum.request({
     snapId,
     {
       method: "getVCs",
+      params: [querry],
     },
   ],
 });
 if (response.data) {
-  //response.data.map((vc) => console.log(vc))
+  //response.data.vcs.map((vc) => console.log(vc))
 } else console.log(response.error);
 ```
 
-To `generate a VP` you need `id` of a VC (from array). It's highly recommended to use `domain` and `challenge` as well:
-
-_NOTE:_ _When generating VP for the first time, users will be asked to generate a delegate for their MetaMask account (This will cost a small tx fee). This is needed for Snap to work properly! More in later sections._
+To `generate a VP` you need `vc_id` of a VC. To get the vc_id, you need to get a list of VCs with the getVCs method and then use the `key` property of the selected VC as a `vc_id`. It's highly recommended to use `domain` and `challenge` as well:
 
 ```js
 const response = await window.ethereum.request({
@@ -100,7 +99,7 @@ const response = await window.ethereum.request({
     snapId,
     {
       method: "getVP",
-      params: [vp_id, domain, challenge],
+      params: [vc_id, domain, challenge],
     },
   ],
 });

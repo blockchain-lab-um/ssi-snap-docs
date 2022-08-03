@@ -66,19 +66,21 @@ if (response.data) {
 
 ---
 
-`getVCs` is used to get a list of VCs from the state of the currently selected MetaMask account.
+`getVCs` is used to get a list of VCs from the state of the currently selected MetaMask account. Optional property `querry` is currently used to filter VCs by issuer. More filter options will be added in the future. Each VC returned by this function will include an additional property `key`, which is not a part of the actual "VC". This property is used as a key of dictionary where VCs are stored and **is required when generating a VP**!
 
 _NOTE: Currently, the only way to select a VC, for which you want to generate a VP, is through the dApp. This will change once MetaMask allows Snaps to implement custom UI elements and enable VC selection directly in MetaMask_
 
 _NOTE 2:_ _This will retrieve a list of VCs stored under currently connected account._
 
 ```js
+const querry = {issuer: "did:ethr:0x123..."}
 const response = await window.ethereum.request({
   method: "wallet_invokeSnap",
   params: [
     snapId,
     {
       method: "getVCs",
+      params[querry]
     },
   ],
 });
@@ -91,9 +93,7 @@ if (response.data) {
 
 ---
 
-`getVP` is used to get a VP for a specific VC. Parameter `VC_ID` is needed. `VC_ID` represents the id of a VC from the array returned by the `getVCs` method! SSI Snap supports generating VPs using domain and challenge. It is recommended to use domain and challenge when generating and verifying VPs. To do so use additional parameters `domain` and `challenge`, however they are not required!
-
-_NOTE:_ _When generating VP for the first time, users will be asked to generate a delegate for their MetaMask account (This will cost a small tx fee). This is needed for Snap to work properly! More in later sections._
+`getVP` is used to get a VP for a specific VC. Parameter `VC_ID` is needed. `VC_ID` is a string and represents the id of a VC stored in SSI Snap state. This id is a string property `key` of every VC returned by the `getVCs` method and ! SSI Snap supports generating VPs using domain and challenge. It is recommended to use domain and challenge when generating and verifying VPs. To do so use additional parameters `domain` and `challenge`, however they are not required!
 
 _NOTE 2: Currently, VPs can only contain a single VC. This will be changed in upcoming versions._
 
