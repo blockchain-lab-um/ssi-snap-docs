@@ -19,24 +19,23 @@ const members: Member[] = [
   },
   {
     name: "Vid Keršič",
-    title: "researcher & developer",
+    title: "Project Leader",
     description: "",
     linkedin: "https://www.linkedin.com/in/vid-kersic/",
     image: "https://blockchain-lab.um.si/wp-content/uploads/2019/12/vid.png",
     twitter: "",
   },
   {
-    name: "Patrik Rek",
-    title: "researcher & developer",
+    name: "Andraž Vrečko",
+    title: "developer & researcher",
     description: "",
-    linkedin: "https://www.linkedin.com/in/patrik-rek-78649a129/",
-    image:
-      "https://blockchain-lab.um.si/wp-content/uploads/2019/12/RekPatrik-4-1.png",
+    linkedin: "https://www.linkedin.com/in/andrazvrecko/",
+    image: "https://via.placeholder.com/150",
     twitter: "",
   },
   {
     name: "Martin Domajnko",
-    title: "developer",
+    title: "developer & researcher",
     description: "",
     linkedin: "https://www.linkedin.com/in/martin-domajnko-94b23617a/",
     image:
@@ -45,19 +44,11 @@ const members: Member[] = [
   },
   {
     name: "Urban Vidovič",
-    title: "developer",
+    title: "developer & researcher",
     description: "",
     linkedin: "https://www.linkedin.com/in/urbanvidovic",
     image:
       "https://blockchain-lab.um.si/wp-content/uploads/2021/10/vidovic_urban.png",
-    twitter: "",
-  },
-  {
-    name: "Andraž Vrečko",
-    title: "developer",
-    description: "",
-    linkedin: "https://www.linkedin.com/in/andrazvrecko/",
-    image: "https://via.placeholder.com/150",
     twitter: "",
   },
 ];
