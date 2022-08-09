@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# veramo-vc-manager (Veramo)
+# VCManager (Veramo)
 
 ### Introduction
 
@@ -15,7 +15,7 @@ export abstract class AbstractVCStore {
   abstract import(args: VerifiableCredential): Promise<boolean>
   abstract get(args: { id: string }): Promise<VerifiableCredential | null>
   abstract delete(args: { id: string }): Promise<boolean>
-  abstract list(args: {querry?: any}): Promise<VerifiableCredential[]>
+  abstract list(): Promise<VerifiableCredential[]>
 }
 ```
 
@@ -41,7 +41,7 @@ export const agent = createAgent<
 });
 ```
 
-#### veramo-vc-manager Functions
+#### VCManager Functions
 
 Get a specific VC
 
@@ -57,9 +57,11 @@ Delete a VC
 
 Get an array of all VCs
 
-`agent.listVCS({querry: querry})`
+`agent.listVCS({querry: VCQuerry})`
 
-querry is an object where additional requirements are provided, for example issuer: did:..., if you only want to list DIDs with said issuer.
+VCQuerry is an object that is a subset of VerifiableCredential. If provided, the function will only return VCs that match the VCQuerry subset. For example if you only want to retrieve VCs issued by a specific DID to a specific subject you would need to use 
+
+`agent.listVCS({querry: {issuer: {id: 'did:ethr:0x...'}, credentialSubject: {id: 'did:ethr:0x...'}}})`
 
 **[GitHub](https://github.com/blockchain-lab-um/veramo-vc-manager) |
 [npm](https://www.npmjs.com/package/@blockchain-lab-um/veramo-vc-manager)**
