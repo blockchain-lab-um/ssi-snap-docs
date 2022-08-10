@@ -6,6 +6,8 @@ import {
 
 export const defaultSnapId = "local:http://localhost:8081";
 
+declare let window: any;
+
 let isInstalled: boolean = false;
 
 export interface SnapInitializationResponse {

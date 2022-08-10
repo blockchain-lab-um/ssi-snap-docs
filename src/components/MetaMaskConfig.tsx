@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from "react";
 import { SSISnapApi } from "@blockchain-lab-um/ssi-snap-types";
 import { isMetamaskSnapsSupported } from "@blockchain-lab-um/ssi-snap-connector";
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { initiateSSISnap } from "./snap";
 
 export default function MetaMaskConfig() {
@@ -19,12 +20,14 @@ export default function MetaMaskConfig() {
   // TODO: Move both to .env ?
   const snapID = "npm:@blockchain-lab-um/ssi-snap";
 
-  useEffect(() => {
-    const snapsSupported = async () => {
-      setSnapSupported(await isMetamaskSnapsSupported());
-    };
-    snapsSupported();
-  }, []);
+  if (ExecutionEnvironment.canUseDOM) {
+    useEffect(() => {
+      const snapsSupported = async () => {
+        setSnapSupported(await isMetamaskSnapsSupported());
+      };
+      snapsSupported();
+    }, []);
+  }
 
   const connectMetamask = async () => {
     let mmAddr = null;
@@ -48,44 +51,49 @@ export default function MetaMaskConfig() {
     if (infuraToken !== "" && api) {
       const res = await api.changeInfuraToken(infuraToken);
       console.log(res);
+      setSuccess(res);
     }
   }
   async function togglePopups() {
     if (api) {
       const res = await api.togglePopups();
       console.log(res);
+      setSuccess(res);
     }
   }
 
   function tokenChange(e: React.ChangeEvent<HTMLInputElement>) {
     setInfuraToken(e.target.value);
   }
-  if (window.ethereum && snapSupported) {
-    return (
-      <div>
-        {mmAddress && <p>Connected account: {mmAddress}</p>}
-        {success && <p>Successfully changed configuration!</p>}
-        <p>
-          {!mmAddress && (
-            <button type="button" onClick={connectMetamask}>
-              Connect MetaMask
-            </button>
-          )}
-          {mmAddress && snapInstalled && (
-            <>
-              <input onChange={tokenChange} type="text" />
-              <button type="button" onClick={submitToken}>
-                Change Infura Token
+
+  if (ExecutionEnvironment.canUseDOM) {
+    if (window.ethereum && snapSupported) {
+      return (
+        <div>
+          {mmAddress && <p>Connected account: {mmAddress}</p>}
+          {success && <p>Successfully changed configuration!</p>}
+          <p>
+            {!mmAddress && (
+              <button type="button" onClick={connectMetamask}>
+                Connect MetaMask
               </button>
-              <br />
-              <button type="button" onClick={togglePopups}>
-                Disable Popups
-              </button>
-            </>
-          )}
-        </p>
-      </div>
-    );
+            )}
+            {mmAddress && snapInstalled && (
+              <>
+                <input onChange={tokenChange} type="text" />
+                <button type="button" onClick={submitToken}>
+                  Change Infura Token
+                </button>
+                <br />
+                <button type="button" onClick={togglePopups}>
+                  Disable Popups
+                </button>
+              </>
+            )}
+          </p>
+        </div>
+      );
+    }
   }
   return <div>Install MetaMask first!</div>;
 }
