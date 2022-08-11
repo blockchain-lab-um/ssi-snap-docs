@@ -15,6 +15,8 @@ Data-store plugins, used by Veramo Client and Manager plugins, modify the state.
 - DIDManager manages data in **identifiers**.
 - VCManager manages data in **vcs**.
 
+It is important to note that KeyStoreManager, PrivateKeyManager and DIDManager are only used when creating additional DIDs, which is currently unsupported. Primary DIDs are MetaMask accounts where private key is **NEVER** exported from MetaMask!
+
 There is also an object that stores configuration, called **SSISnapConfig**. Inside this object user-set settings are stored, such as Infura token, where VCs are stored (currently only Snap is supported), etc.
 
 Structure of the state stored in MetaMask:

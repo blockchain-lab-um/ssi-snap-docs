@@ -12,7 +12,7 @@ The **SSI Snap** is a MetaMask Snap, that can handle **DIDs**, securely store **
 
 ### Using the Snap
 
-In order to install and test the Snap, you will need to install [MetaMask Flask](https://metamask.io/flask/). For full functionality, creating a delegate is required, which costs some gas, hence some ether is required!
+In order to install and test the Snap, you will need to install [MetaMask Flask](https://metamask.io/flask/).
 
 You can install the Snap in [Configuration Page](config) or by simply connecting to our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or select it from the [Snaplist](https://snaplist.org/)
 
@@ -31,8 +31,6 @@ Demo should open on localhost:8081
 
 ---
 
-
-
 ## Developer
 
 ### Implementing the Snap in a dApp
@@ -44,7 +42,6 @@ We developed a simple library called [SSI Snap Connector](plugins/ssi-snap-conne
 To `install` the SSI Snap:
 
 _NOTE:_ _Snap can also be installed using a 3rd party Platform such as our [Platform](https://blockchain-lab-um.github.io/course-dapp/) or [Snaplist](https://snaplist.org/)._
-
 
 `yarn add @blockchain-lab-um/ssi-snap-connector`
 
@@ -72,6 +69,7 @@ const vcs = await api.getVCs();
 
 console.log("list of VCs:", vcs);
 ```
+
 More detailed use of `SSISnapAPI` methods can be found [here](plugins/ssi-snap-connector).
 
 ### Working with VCs

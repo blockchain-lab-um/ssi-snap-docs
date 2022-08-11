@@ -7,6 +7,7 @@ sidebar_position: 1
 SSI Snap connector is used to install SSI snap and expose API toward snap on dApps and other applications.
 
 For more details on SSI Snap Connector itself see [ssi-snap-connector repo](https://github.com/blockchain-lab-um/ssi-snap-connector).
+
 ## Usage
 
 ### Install
@@ -82,3 +83,7 @@ const res = await api.changeInfuraToken(infuraToken);
 ```
 
 _NOTE: VCQuerry is an object that is a subset of VerifiableCredential. If provided, the function will only return VCs that match the VCQuerry subset. For example if you only want to retrieve VCs issued by a specific DID to a specific subject you would need to use `agent.listVCS({querry: {issuer: {id: 'did:ethr:0x...'}, credentialSubject: {id: 'did:ethr:0x...'}}})`_
+
+#### Utility methods
+
+SSI Snap Connector also comes with additional utility methods such as `isSnapInstalled`, `isMetamaskSnapsSupported` and `hasMetamask`.
