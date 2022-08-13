@@ -24,6 +24,18 @@ You might ask yourselves why we have decided to build a proof of concept on Ethe
 - Huge developer community with plenty of already established frameworks, including various SSI & DID frameworks and battle-tested did:ethr method,
 - DID Documents do not need to be changed often (or even never in some cases); hence gas fees do not present such a huge problem
 
+## Digital Signatures
+
+Digital signatures apply to both VCs and VPs, but in most cases, they are signed by different actors in the SSI lifecycle. Thus we can approach them in a slightly different way.
+
+### Verifiable Credentials (VCs)
+
+At the moment, SSI Snap supports only storing of VCs. They can contain different proof types, such as JSON-LD and JWT. There are also no limitations to signature algorithms since VCs are often signed on the backend systems of the issuers, where any software library can be used. Several algorithms and cryptographic primitives are supported, such as secp256k and Ed25519.
+
+### Verifiable Presentations (VPs)
+
+On the other hand, VPs are signed by holders using their wallets, which is the role of SSI Snap. MetaMask cryptographic and signing capabilities are used for digitally signing VPs; thus, digital signatures are limited to cryptographic primitives and formats supported in the Ethereum ecosystem. Therefore VPs contain signatures in type [Ethereum EIP712 Signature 2021](https://w3c-ccg.github.io/ethereum-eip712-signature-2021-spec/).
+
 ## SSI Framework
 
 To make DIDs functional a framework is needed. SSI Snap uses **[Veramo framework](https://veramo.io/)** inside the SSI Snap to handle most work related to DIDs, VCs, and VPs. Veramo is a performant and modular API for Verifiable Data and SSI. Essentially it's a client that allows the creation and management of DIDs, VCs, and VPs and makes developers' lives working with them much easier.

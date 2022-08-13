@@ -6,23 +6,36 @@ sidebar_position: 8
 
 Are you interested in how SSI Snap will evolve in the future?
 
-Finished:
+DID methods:  
+- [x] `did:ethr`
+- [ ] `did:key`
+- [ ] `did:web`
+- [ ] `did:github`   
+- [ ] `did:pkh`
+- [ ] `did:ebsi`
+- [ ] ... 
 
-- [x] support for DID method did:ethr
-- [x] signing VCs with MetaMask
-- [x] local off-chain storage (inside MetaMask Snap)
-- [x] alpha release
-
-Planned features:
-
-- [ ] support other DID methods (did:ebsi ...)
-- [ ] support storage on Ceramic Network
-- [ ] support storage on cloud platforms
-- [ ] sync data between multiple MetaMask wallets
-- [ ] VC revocation
-- [ ] OIDC flows for VC issuance and VP exchange
-- [ ] CHAPI
-- [ ] UI inside MetaMask Snap for configuration
+Storage:
+- [x] local/offchain (MetaMask Snap state)
+- [ ] Ceramic Network
+- [ ] Google Drive
+- [ ] data synchronization between multiple MetaMask wallets
 - [ ] ...
 
-This page is subject to change in the future.
+Standards:
+- [ ] OpenID Connect (OIDC4VC and OIDC4VP)
+- [ ] CHAPI
+- [ ] ...
+
+Digital signatures:
+- [x] signing VCs and VPs using MetaMask ([Ethereum EIP712 Signature 2021](https://w3c-ccg.github.io/ethereum-eip712-signature-2021-spec/))
+- [ ] selective disclosure
+- [ ] zero-knowledge proofs (ZKPs)
+- [ ] ...
+
+Others:
+- [ ] UI inside MetaMask Snap for configuration
+- [ ] VC revocation
+- [ ] ...
+
+This page is subject to change in the future. Join our Discord to join the discussion!

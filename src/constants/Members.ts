@@ -23,7 +23,7 @@ const members: Member[] = [
     description: "",
     linkedin: "https://www.linkedin.com/in/vid-kersic/",
     image: "https://blockchain-lab.um.si/wp-content/uploads/2019/12/vid.png",
-    twitter: "",
+    twitter: "https://twitter.com/vidkersic",
   },
   {
     name: "Andraž Vrečko",
