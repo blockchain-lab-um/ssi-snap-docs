@@ -15,6 +15,12 @@ DID methods:
 - [ ] `did:ebsi`
 - [ ] ... 
 
+Verifiable Credentials (VCs):
+- [x] retrieval 
+- [ ] querying based on values of the properties
+- [ ] revocation
+- [ ] ...
+
 Storage:
 - [x] local/offchain (MetaMask Snap state)
 - [ ] Ceramic Network
@@ -35,7 +41,6 @@ Digital signatures:
 
 Others:
 - [ ] UI inside MetaMask Snap for configuration
-- [ ] VC revocation
 - [ ] ...
 
 This page is subject to change in the future. Join our Discord to join the discussion!
