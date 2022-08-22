@@ -83,7 +83,6 @@ export class SnapVCStore extends AbstractVCStore {
       result.push({ ...ssiAccountState.vcs[key], key: key });
     });
 
-
     return result;
   }
 }

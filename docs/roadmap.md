@@ -6,22 +6,25 @@ sidebar_position: 8
 
 Are you interested in how SSI Snap will evolve in the future?
 
-DID methods:  
+DID methods:
+
 - [x] `did:ethr`
 - [ ] `did:key`
 - [ ] `did:web`
-- [ ] `did:github`   
+- [ ] `did:github`
 - [ ] `did:pkh`
 - [ ] `did:ebsi`
-- [ ] ... 
+- [ ] ...
 
 Verifiable Credentials (VCs):
-- [x] retrieval 
+
+- [x] retrieval
 - [ ] querying based on values of the properties
 - [ ] revocation
 - [ ] ...
 
 Storage:
+
 - [x] local/offchain (MetaMask Snap state)
 - [ ] Ceramic Network
 - [ ] Google Drive
@@ -29,17 +32,20 @@ Storage:
 - [ ] ...
 
 Standards:
+
 - [ ] OpenID Connect (OIDC4VC and OIDC4VP)
 - [ ] CHAPI
 - [ ] ...
 
 Digital signatures:
+
 - [x] signing VCs and VPs using MetaMask ([Ethereum EIP712 Signature 2021](https://w3c-ccg.github.io/ethereum-eip712-signature-2021-spec/))
 - [ ] selective disclosure
 - [ ] zero-knowledge proofs (ZKPs)
 - [ ] ...
 
 Others:
+
 - [ ] UI inside MetaMask Snap for configuration
 - [ ] ...
 

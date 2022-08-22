@@ -59,7 +59,7 @@ Get an array of all VCs
 
 `agent.listVCS({querry: VCQuerry})`
 
-VCQuerry is an object that is a subset of VerifiableCredential. If provided, the function will only return VCs that match the VCQuerry subset. For example if you only want to retrieve VCs issued by a specific DID to a specific subject you would need to use 
+VCQuerry is an object that is a subset of VerifiableCredential. If provided, the function will only return VCs that match the VCQuerry subset. For example if you only want to retrieve VCs issued by a specific DID to a specific subject you would need to use
 
 `agent.listVCS({querry: {issuer: {id: 'did:ethr:0x...'}, credentialSubject: {id: 'did:ethr:0x...'}}})`
 

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-inferrable-types */
 import {
   MetaMaskSSISnap,
   enableSSISnap,
@@ -6,9 +5,7 @@ import {
 
 export const defaultSnapId = "local:http://localhost:8081";
 
-declare let window: any;
-
-let isInstalled: boolean = false;
+let isInstalled = false;
 
 export interface SnapInitializationResponse {
   isSnapInstalled: boolean;
@@ -20,8 +17,9 @@ export async function initiateSSISnap(
 ): Promise<SnapInitializationResponse> {
   try {
     console.log("Attempting to connect to snap...");
-    const metamaskSSISnap = await enableSSISnap(snapId, {
-      version: "latest",
+    const metamaskSSISnap = await enableSSISnap({
+      snapId,
+      supportedMethods: ["did:ethr", "did:key"],
     });
     isInstalled = true;
     console.log("Snap installed!");
