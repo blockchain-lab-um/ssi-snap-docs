@@ -23,6 +23,11 @@ Verifiable Credentials (VCs):
 - [ ] revocation
 - [ ] ...
 
+Connector Library:
+
+- [x] simple implementation
+- [ ] ...
+
 Storage:
 
 - [x] local/offchain (MetaMask Snap state)
