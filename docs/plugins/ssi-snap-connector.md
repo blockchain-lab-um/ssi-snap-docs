@@ -18,12 +18,18 @@ Connector has exposed function for installing the Snap.
 
 ```typescript
 export async function enableSSISnap(
-  snapOrigin?: string,
-  snapInstallationParams: Record<SnapInstallationParamNames, unknown> = {}
-): Promise<MetaMaskSSISnap>;
+  {
+    snapId?: string;
+    version?: string;
+    supportedMethods?: Array<typeof availableMethods[number]>;
+  }): Promise<MetaMaskSSISnap>;
 ```
 
-It is possible to override default SSI Snap origin and 'latest' version.
+When installing the SSI Snap it is possible to set a custom `snapId` if you do not want to instal it from the official repository.
+
+It is also possible to use custom version and set a list of supported methods. If connected SSI Snap does not currently have one of the supported methods selected, `switchMethod` RPC method will be automatically called.
+
+During the `enableSSISnap` function `init` RPC method is called. If user changes MetaMask Account, the same function will be called again (nothing will happen if user already accepted Terms & Conditions on new Account).
 
 After snap installation, this function returns `MetamaskSSISnap` object that can be used to retrieve snap API.
 An example of initializing SSI snap and invoking snap API is shown below.
@@ -66,6 +72,53 @@ const vp = await api.getVP(vc_id);
  *
  */
 const res = await api.saveVC(verifiableCredential);
+
+/**
+ * Initialize MetaMask snap for an account
+ *
+ */
+const res = await api.init();
+/**
+ * Get DID generated using currently selected MM account and currently selected DID method.
+ * @returns {string} - did
+ */
+const did = await api.getDID();
+/**
+ * Get currently selected DID Method
+ *
+ * @returns {string} - did method
+ */
+const method = await api.getMethod();
+/**
+ * Get a list of supported DID methods
+ *
+ * @returns {Array<string>} - supported DID methods
+ */
+const methods = await api.getAvailableMethods();
+/**
+ * Switch DID method to one of supported DID methods
+ *
+ * @param {string} - new DID method name
+ */
+const res = await api.switchMethod(didMethod);
+/**
+ * Get currently selected VC Store plugin
+ *
+ * @returns {string} - name of VC Store plugin
+ */
+const vcStore = await api.getVCStore();
+/**
+ * Get a list supported VC Store plugins
+ *
+ * @returns {Array<string>} - supported VC Store plugins
+ */
+const vcStores = await api.getAvailableVCStores();
+/**
+ * Set VC Store plugin
+ *
+ * @param {string} - name of VC Store plugin
+ */
+const res = await api.setVCStore(vcStore);
 
 /**
  * Toggle popups - enable/disable "Are you sure?" confirmation windows when retrieving VCs and generating VPs,...

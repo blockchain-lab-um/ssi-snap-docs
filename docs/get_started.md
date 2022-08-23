@@ -45,24 +45,15 @@ _NOTE:_ _Snap can also be installed using a 3rd party Platform such as our [Plat
 
 `yarn add @blockchain-lab-um/ssi-snap-connector`
 
-Connector has exposed function for installing the Snap.
-
-```typescript
-export async function enableSSISnap(
-  snapOrigin?: string,
-  snapInstallationParams: Record<SnapInstallationParamNames, unknown> = {}
-): Promise<MetaMaskSSISnap>;
-```
-
-It is possible to override default SSI Snap origin and 'latest' version.
+`enableSSISnap` is a function used to install the SSI Snap.
 
 After snap installation, this function returns `MetamaskSSISnap` object that can be used to retrieve snap API.
 An example of initializing SSI snap and invoking snap API is shown below.
 
 ```typescript
 // install snap and fetch API
-const snap = await enableSSISnap({ version: "latest" });
-const api = await snap.getSSISnapApi();
+const metamaskSSISnap = await enableSSISnap();
+const api = metamaskSSISnap.getSSISnapApi();
 
 // invoke API
 const vcs = await api.getVCs();
@@ -70,8 +61,8 @@ const vcs = await api.getVCs();
 console.log("list of VCs:", vcs);
 ```
 
-More detailed use of `SSISnapAPI` methods can be found [here](plugins/ssi-snap-connector).
+More detailed documentation of `SSISnapConnector` can be found **[here](plugins/ssi-snap-connector)**.
 
 ### Working with VCs
 
-It is up to the dApp to issue VCs and/or request VPs/VCs and verify their validity (scheme, subject, controller, content, etc.). We recommend using [Veramo Framework](https://veramo.io/).
+It is up to the dApp to issue VCs and/or request VPs/VCs and verify their validity (scheme, subject, controller, content, etc.). We recommend using [Veramo Framework](https://veramo.io/). For implementation references take a look at our [dApp](https://github.com/blockchain-lab-um/course-dapp) and [backend](https://github.com/blockchain-lab-um/course-backend) code.
