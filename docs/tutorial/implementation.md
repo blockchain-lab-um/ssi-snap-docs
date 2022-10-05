@@ -6,6 +6,8 @@ sidebar_position: 1
 
 The **SSI Snap** is a MetaMask Snap, that can handle **DIDs**, securely store **VCs**, create **VPs** and is designed to be blockchain-agnostic.
 
+_**Note:** Ceramic network and DID:KEY support are experimental and still under development!_
+
 ## Implementing the Snap in a dApp
 
 ### Using the SSI Snap Connector

@@ -8,6 +8,8 @@ SSI Snap connector is used to install SSI snap and expose API toward snap on dAp
 
 For more details on SSI Snap Connector itself see [ssi-snap-connector repo](https://github.com/blockchain-lab-um/ssi-snap-connector).
 
+_**Note:** Ceramic network and DID:KEY support are experimental and still under development!_
+
 ## Usage
 
 ### Install

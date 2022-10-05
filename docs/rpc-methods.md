@@ -135,6 +135,8 @@ Switch the DID method
 
 1. didMethod - name of did method ("did:ethr" or "did:key"). Must be one of methods returned by `getAvailableMethods`.
 
+   _Note: DID:KEY support is experimental and still under development!_
+
 ```typescript
 const response = await ethereum.request({
   method: "wallet_invokeSnap",
@@ -195,6 +197,8 @@ Change the selected VC Store plugin
 #### Parameters
 
 1. vcStore - name of VC Store plugin ("snap" or "ceramic"). Must be one of methods returned by `getAvailableVCStores`.
+
+   _Note: Ceramic network support is experimental and still under development!_
 
 ```typescript
 const response = await ethereum.request({

@@ -24,11 +24,13 @@ You might ask yourselves why we have decided to build a proof of concept on Ethe
 - Huge developer community with plenty of already established frameworks, including various SSI & DID frameworks and battle-tested did:ethr method,
 - DID Documents do not need to be changed often (or even never in some cases); hence gas fees do not present such a huge problem
 
-### Available DID Methods
+### Available DID Methods (Experimental)
 
 In SSI Snap, users can pick a different DID method for every account they use. For example if they want to use `did:ethr` on Account 1 and `did:key` on Account 2, they can!
 
 Currently, SSI Snap supports 2 DID methods; `did:ethr` and `did:key`. In the future we plan to add support for other significant DID methods that are capable of expressing secp256k keys.
+
+_Note: DID:KEY support is experimental and still under development!_
 
 ## Digital Signatures
 
@@ -52,11 +54,13 @@ These DIDs and VCs need to be stored somewhere. By default, SSI Snap stores all 
 
 In the future other ways of storing data will be implemented, starting with storing data in the cloud. Storing data outside MetaMask brings many benefits such as ability to sync multiple applications and ability to make external backups.
 
-### Available plugins for storing VCs
+### Available plugins for storing VCs (Experimental)
 
 In SSI Snap, users can decide where VCs will get stored for every account they use. For example if they want to store sensitive VCs in most private store, snap state, they can! On the other hand, if they want to store VCs on-chain and maybe sync them with their other wallets, they can do that aswell with Ceramic Network on Account 2.
 
 Currently, SSI Snap supports 2 ways of storing VCs; `MetaMask state` and `Ceramic Network`. In the future we plan to add support for other plugins such as Google Drive, IPFS, etc.
+
+_Note: Ceramic network support is experimental and still under development!_
 
 ## Security
 

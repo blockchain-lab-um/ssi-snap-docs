@@ -4,6 +4,8 @@ sidebar_position: 4
 
 # VCManager (Veramo)
 
+_**Note:** Ceramic network support is experimental and still under development!_
+
 ### Introduction
 
 Veramo does not provide similar support for managing VCs like it does for DIDs and KeyPairs. **Veramo VC Manager** is a custom plugin for managing VCs with the Veramo client. It works very similarly to [DIDManager](https://github.com/uport-project/veramo/tree/next/packages/did-manager) and other Manager plugins built for Veramo. VCs stored using this plugin are stored in an array.
