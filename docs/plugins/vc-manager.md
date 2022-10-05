@@ -4,7 +4,11 @@ sidebar_position: 4
 
 # VCManager (Veramo)
 
-_**Note:** Ceramic network support is experimental and still under development!_
+:::danger
+
+Ceramic network support is experimental and still under development!
+
+:::
 
 ### Introduction
 

@@ -135,7 +135,11 @@ Switch the DID method
 
 1. didMethod - name of did method ("did:ethr" or "did:key"). Must be one of methods returned by `getAvailableMethods`.
 
-   _Note: DID:KEY support is experimental and still under development!_
+:::danger
+
+DID:KEY support is experimental and still under development!
+
+:::
 
 ```typescript
 const response = await ethereum.request({
@@ -198,7 +202,11 @@ Change the selected VC Store plugin
 
 1. vcStore - name of VC Store plugin ("snap" or "ceramic"). Must be one of methods returned by `getAvailableVCStores`.
 
-   _Note: Ceramic network support is experimental and still under development!_
+:::danger
+
+Ceramic network support is experimental and still under development!
+
+:::
 
 ```typescript
 const response = await ethereum.request({

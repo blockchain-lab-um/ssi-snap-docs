@@ -30,7 +30,11 @@ In SSI Snap, users can pick a different DID method for every account they use. F
 
 Currently, SSI Snap supports 2 DID methods; `did:ethr` and `did:key`. In the future we plan to add support for other significant DID methods that are capable of expressing secp256k keys.
 
-_Note: DID:KEY support is experimental and still under development!_
+:::danger
+
+DID:KEY support is experimental and still under development!
+
+:::
 
 ## Digital Signatures
 
@@ -60,7 +64,11 @@ In SSI Snap, users can decide where VCs will get stored for every account they u
 
 Currently, SSI Snap supports 2 ways of storing VCs; `MetaMask state` and `Ceramic Network`. In the future we plan to add support for other plugins such as Google Drive, IPFS, etc.
 
-_Note: Ceramic network support is experimental and still under development!_
+:::danger
+
+Ceramic network support is experimental and still under development!
+
+:::
 
 ## Security
 
