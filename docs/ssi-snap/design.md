@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Design
 
-**The SSI Snap is a MetaMask Snap, that can handle DIDs, securely store VCs, and create the VPs. It is designed to be blockchain-agnostic.
+**The SSI Snap is a MetaMask Snap, that can handle DIDs, securely store VCs, and create the VPs. It is designed to be blockchain-agnostic. SSI Snap uses existing MetaMask accounts as DIDs or as a mean to create new DIDs, without the need to ever export private keys from MetaMask, hence leveraging its security!
 **
 
 ## DID Method
@@ -24,13 +24,19 @@ You might ask yourselves why we have decided to build a proof of concept on Ethe
 - Huge developer community with plenty of already established frameworks, including various SSI & DID frameworks and battle-tested did:ethr method,
 - DID Documents do not need to be changed often (or even never in some cases); hence gas fees do not present such a huge problem
 
+### Available DID Methods
+
+In SSI Snap, users can pick a different DID method for every account they use. For example if they want to use `did:ethr` on Account 1 and `did:key` on Account 2, they can!
+
+Currently, SSI Snap supports 2 DID methods; `did:ethr` and `did:key`. In the future we plan to add support for other significant DID methods that are capable of expressing secp256k keys.
+
 ## Digital Signatures
 
 Digital signatures apply to both VCs and VPs, but in most cases, they are signed by different actors in the SSI lifecycle. Thus we can approach them in a slightly different way.
 
 ### Verifiable Credentials (VCs)
 
-At the moment, SSI Snap supports only storing of VCs. They can contain different proof types, such as JSON-LD and JWT. There are also no limitations to signature algorithms since VCs are often signed on the backend systems of the issuers, where any software library can be used. Several algorithms and cryptographic primitives are supported, such as secp256k and Ed25519.
+SSI Snap supports storing of VCs. They can contain different proof types, such as JSON-LD and JWT. There are also no limitations to signature algorithms since VCs are often signed on the backend systems of the issuers, where any software library can be used. Several algorithms and cryptographic primitives are supported, such as secp256k and Ed25519.
 
 ### Verifiable Presentations (VPs)
 
@@ -42,9 +48,15 @@ To make DIDs functional a framework is needed. SSI Snap uses **[Veramo framework
 
 ## Data Storage
 
-These DIDs and VCs need to be stored somewhere. By default, SSI Snap stores all data in the MetaMask State. More about this in the [State](/docs/ssi-snap/storage) section.
+These DIDs and VCs need to be stored somewhere. By default, SSI Snap stores all data in the MetaMask State, but it is possible to store VCs on [Ceramic Network](https://ceramic.network/). More about this in the [State](/docs/ssi-snap/storage) section.
 
 In the future other ways of storing data will be implemented, starting with storing data in the cloud. Storing data outside MetaMask brings many benefits such as ability to sync multiple applications and ability to make external backups.
+
+### Available plugins for storing VCs
+
+In SSI Snap, users can decide where VCs will get stored for every account they use. For example if they want to store sensitive VCs in most private store, snap state, they can! On the other hand, if they want to store VCs on-chain and maybe sync them with their other wallets, they can do that aswell with Ceramic Network on Account 2.
+
+Currently, SSI Snap supports 2 ways of storing VCs; `MetaMask state` and `Ceramic Network`. In the future we plan to add support for other plugins such as Google Drive, IPFS, etc.
 
 ## Security
 

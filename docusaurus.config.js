@@ -65,7 +65,7 @@ const config = {
       items: [
         { to: "/docs/get_started", label: "Quickstart", position: "left" },
         { to: "/docs/intro", label: "Docs", position: "left" },
-        { to: "/docs/config", label: "Manage SSI Snap", position: "left" },
+        { to: "/docs/config", label: "Configure SSI Snap", position: "left" },
         {
           to: "https://medium.com/@blockchainlabum",
           label: "Blog",
