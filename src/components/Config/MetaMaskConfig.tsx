@@ -44,7 +44,7 @@ export default function MetaMaskConfig() {
 
   // TODO: Move both to .env ?
   const snapID = "npm:@blockchain-lab-um/ssi-snap";
-  //const snapID = "local:http://localhost:8081/";
+  // const snapID = "local:http://localhost:8081/";
   if (ExecutionEnvironment.canUseDOM) {
     useEffect(() => {
       const snapsSupported = async () => {

@@ -1177,18 +1177,18 @@
     "@babel/helper-validator-identifier" "^7.18.6"
     to-fast-properties "^2.0.0"
 
-"@blockchain-lab-um/ssi-snap-connector@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/@blockchain-lab-um/ssi-snap-connector/-/ssi-snap-connector-1.0.6.tgz"
-  integrity sha512-WXP0zSDxxDRHM3D6GYJD3nOCirBimUuA01gmyzyLxi6i1OyEvgGFPb5MNoq7KSTcqwfXvV2jm3G3UKVlyORlcA==
+"@blockchain-lab-um/ssi-snap-connector@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@blockchain-lab-um/ssi-snap-connector/-/ssi-snap-connector-1.0.7.tgz#10ace7fea418fa6bfcbe19074a19e079b56192b3"
+  integrity sha512-4t+sHAb7SdxQSopxpEJdl5oUs9ocn1eeul8IvfNtKDORALyxzetU/HEDzDvRojM1lcOLltMe3ITS0SFrowY6Eg==
   dependencies:
-    "@blockchain-lab-um/ssi-snap-types" "1.0.9"
-    "@veramo/core" "^3.1.6-next.146"
+    "@blockchain-lab-um/ssi-snap-types" "1.0.10"
+    "@veramo/core" "^4.0.2-next.9"
 
-"@blockchain-lab-um/ssi-snap-types@1.0.9", "@blockchain-lab-um/ssi-snap-types@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.npmjs.org/@blockchain-lab-um/ssi-snap-types/-/ssi-snap-types-1.0.9.tgz"
-  integrity sha512-QG4DEgKq5yKI+biwIMG5p1rsikTELMxnrqq4a/kzs5Shx85tAjwsNrc3gwzZv1kh4cEUN62IhkBBHRjQ8XDGQQ==
+"@blockchain-lab-um/ssi-snap-types@1.0.10", "@blockchain-lab-um/ssi-snap-types@^1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@blockchain-lab-um/ssi-snap-types/-/ssi-snap-types-1.0.10.tgz#f814df29882cc6c88b8a02c74cd0990f0c60cc65"
+  integrity sha512-3cz1e307CugdPAZNoTN156DLWLvSkTKtXwJX4C1ry2zeqWcq1YtWAd0GT/nfjmc1ouYDk1hjOrr9L2lycregSg==
   dependencies:
     "@veramo/core" "^3.1.6-next.146"
 
@@ -3109,6 +3109,16 @@
     events "^3.2.0"
     z-schema "^5.0.2"
 
+"@veramo/core@^4.0.2-next.9":
+  version "4.0.2-next.9"
+  resolved "https://registry.yarnpkg.com/@veramo/core/-/core-4.0.2-next.9.tgz#b77aef4089895250f7fb9ed0afb5e5f8e1b6be11"
+  integrity sha512-Rp0gG0u58eT9giHJ+NU81nBac6ouNLQHxML8kcbNUVQeo2sBfgHqohNtEnUwQh0aN/i19XqVDPxE0AuWYeGd1Q==
+  dependencies:
+    debug "^4.3.3"
+    did-jwt-vc "^3.1.0"
+    events "^3.2.0"
+    z-schema "^5.0.2"
+
 "@web3-react/abstract-connector@^6.0.7":
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/@web3-react/abstract-connector/-/abstract-connector-6.0.7.tgz#401b3c045f1e0fab04256311be49d5144e9badc6"
@@ -4956,7 +4966,7 @@ detect-port@^1.3.0:
     address "^1.0.1"
     debug "^2.6.0"
 
-did-jwt-vc@^3.0.0:
+did-jwt-vc@^3.0.0, did-jwt-vc@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/did-jwt-vc/-/did-jwt-vc-3.1.0.tgz#aa7877c4c1f26ba11883604ac0ece30ca4fe78a4"
   integrity sha512-8N54No9RQpbDM4a/aMiGc/tZWubtH8bqi7DLnO6B62AdWaNVKeS9ddcuANztSS1yTuypyzlyeeEtCTqEzpYgjA==
