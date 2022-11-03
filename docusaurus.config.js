@@ -72,7 +72,7 @@ const config = {
           position: "right",
         },
         {
-          href: "https://discord.gg/jNzEkAEG",
+          href: "https://discord.gg/BUXRpwwjfr",
           label: "Discord",
           position: "right",
         },
@@ -104,7 +104,7 @@ const config = {
         },
         {
           label: "Discord",
-          href: "https://discord.gg/cKA24TuMUd",
+          href: "https://discord.gg/BUXRpwwjfr",
         },
         {
           label: "LinkedIn",
